@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afterglow Track Tagger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #333;
+            font-size: 13px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4a90e2;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4a90e2;
+            cursor: pointer;
+            border: none;
+        }
+
+        .confidence-input {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .confidence-input input[type="range"] {
+            flex: 1;
+        }
+
+        .confidence-value {
+            min-width: 30px;
+            text-align: center;
+            font-weight: 600;
+            color: #4a90e2;
+            font-size: 14px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn-add {
+            background: #4a90e2;
+            color: white;
+        }
+
+        .btn-add:hover {
+            background: #357abd;
+        }
+
+        .btn-clear {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-clear:hover {
+            background: #e0e0e0;
+        }
+
+        .btn-copy {
+            background: #50c878;
+            color: white;
+            font-size: 12px;
+        }
+
+        .btn-copy:hover {
+            background: #3aa860;
+        }
+
+        .track-list {
+            margin-top: 20px;
+        }
+
+        .track-item {
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .track-info {
+            flex: 1;
+        }
+
+        .track-title {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .track-meta {
+            color: #666;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .track-tags {
+            color: #4a90e2;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .btn-delete {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .btn-delete:hover {
+            background: #ee5a52;
+        }
+
+        .output {
+            margin-top: 20px;
+        }
+
+        .output-section {
+            margin-bottom: 20px;
+        }
+
+        .output-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
+            resize: vertical;
+        }
+
+        .stats {
+            background: #f0f7ff;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .stats-item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .stats-label {
+            color: #666;
+        }
+
+        .stats-value {
+            font-weight: 600;
+            color: #4a90e2;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Input Panel -->
+        <div class="panel">
+            <h1>🎵 Track Tagger</h1>
+            <p class="subtitle">Tag your tracks with confidence scores</p>
+
+            <div class="form-group">
+                <label>Track Title *</label>
+                <input type="text" id="title" placeholder="e.g., Solar">
+            </div>
+
+            <div class="form-group">
+                <label>Artist *</label>
+                <input type="text" id="artist" placeholder="e.g., Untitled">
+            </div>
+
+            <div class="form-group">
+                <label>Duration</label>
+                <input type="text" id="duration" placeholder="e.g., 5:42">
+            </div>
+
+            <div class="form-group">
+                <label>Genre</label>
+                <input type="text" id="genre" placeholder="e.g., House">
+            </div>
+
+            <div class="form-group">
+                <label>BPM</label>
+                <input type="number" id="bpm" placeholder="e.g., 128">
+            </div>
+
+            <div class="form-group">
+                <label>Key</label>
+                <input type="text" id="key" placeholder="e.g., A minor">
+            </div>
+
+            <div class="form-group">
+                <label>Play Count</label>
+                <input type="number" id="playCount" placeholder="e.g., 2" value="0">
+            </div>
+
+            <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
+
+            <div class="form-group">
+                <label>Time/Setting</label>
+                <select id="time">
+                    <option value="">-- Select --</option>
+                    <option value="sunrise-reset">Sunrise Reset</option>
+                    <option value="warm-up">Warm-up</option>
+                    <option value="festival-brunch">Festival Brunch</option>
+                    <option value="pool-party">Pool Party</option>
+                    <option value="post-game">Post-game</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Time Confidence</label>
+                <div class="confidence-input">
+                    <input type="range" id="timeConfidence" min="1" max="10" value="5">
+                    <div class="confidence-value" id="timeConfidenceValue">5</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Journey Role</label>
+                <select id="role">
+                    <option value="">-- Select --</option>
+                    <option value="opener">Opener</option>
+                    <option value="bridge">Bridge</option>
+                    <option value="reset">Reset</option>
+                    <option value="home-stretch">Home Stretch</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Role Confidence</label>
+                <div class="confidence-input">
+                    <input type="range" id="roleConfidence" min="1" max="10" value="5">
+                    <div class="confidence-value" id="roleConfidenceValue">5</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Crowd State</label>
+                <select id="crowd">
+                    <option value="">-- Select --</option>
+                    <option value="arrivals">Arrivals</option>
+                    <option value="lock-in">Lock-in</option>
+                    <option value="wanderers">Wanderers</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Crowd Confidence</label>
+                <div class="confidence-input">
+                    <input type="range" id="crowdConfidence" min="1" max="10" value="5">
+                    <div class="confidence-value" id="crowdConfidenceValue">5</div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-add" onclick="addTrack()">+ Add Track</button>
+                <button class="btn-clear" onclick="clearForm()">Clear</button>
+            </div>
+
+            <div class="track-list" id="trackList"></div>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="panel">
+            <h1>📋 Output</h1>
+            <p class="subtitle">Copy and paste into DEMO-LIBRARY-30.md</p>
+
+            <div class="stats">
+                <div class="stats-item">
+                    <span class="stats-label">Tracks tagged:</span>
+                    <span class="stats-value" id="trackCount">0</span>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-title">Markdown Table</div>
+                <button class="btn-copy" onclick="copyMarkdownTable()">Copy Table</button>
+                <textarea id="markdownOutput" readonly></textarea>
+            </div>
+
+            <div class="output-section">
+                <div class="output-title">JSON Format</div>
+                <button class="btn-copy" onclick="copyJSON()">Copy JSON</button>
+                <textarea id="jsonOutput" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let tracks = [];
+        let nextId = 1;
+
+        // Update confidence display
+        document.getElementById('timeConfidence').addEventListener('input', function() {
+            document.getElementById('timeConfidenceValue').textContent = this.value;
+        });
+
+        document.getElementById('roleConfidence').addEventListener('input', function() {
+            document.getElementById('roleConfidenceValue').textContent = this.value;
+        });
+
+        document.getElementById('crowdConfidence').addEventListener('input', function() {
+            document.getElementById('crowdConfidenceValue').textContent = this.value;
+        });
+
+        function addTrack() {
+            const title = document.getElementById('title').value.trim();
+            const artist = document.getElementById('artist').value.trim();
+
+            if (!title || !artist) {
+                alert('Title and Artist are required');
+                return;
+            }
+
+            const track = {
+                id: nextId++,
+                title,
+                artist,
+                duration: document.getElementById('duration').value.trim(),
+                genre: document.getElementById('genre').value.trim(),
+                bpm: document.getElementById('bpm').value.trim(),
+                key: document.getElementById('key').value.trim(),
+                playCount: parseInt(document.getElementById('playCount').value) || 0,
+                tags: {
+                    time: document.getElementById('time').value,
+                    role: document.getElementById('role').value,
+                    crowd: document.getElementById('crowd').value
+                },
+                confidence: {
+                    time: parseInt(document.getElementById('timeConfidence').value),
+                    role: parseInt(document.getElementById('roleConfidence').value),
+                    crowd: parseInt(document.getElementById('crowdConfidence').value)
+                }
+            };
+
+            tracks.push(track);
+            clearForm();
+            renderTracks();
+            updateOutput();
+        }
+
+        function deleteTrack(id) {
+            tracks = tracks.filter(t => t.id !== id);
+            renderTracks();
+            updateOutput();
+        }
+
+        function clearForm() {
+            document.getElementById('title').value = '';
+            document.getElementById('artist').value = '';
+            document.getElementById('duration').value = '';
+            document.getElementById('genre').value = '';
+            document.getElementById('bpm').value = '';
+            document.getElementById('key').value = '';
+            document.getElementById('playCount').value = '0';
+            document.getElementById('time').value = '';
+            document.getElementById('role').value = '';
+            document.getElementById('crowd').value = '';
+            document.getElementById('timeConfidence').value = 5;
+            document.getElementById('roleConfidence').value = 5;
+            document.getElementById('crowdConfidence').value = 5;
+            document.getElementById('timeConfidenceValue').textContent = '5';
+            document.getElementById('roleConfidenceValue').textContent = '5';
+            document.getElementById('crowdConfidenceValue').textContent = '5';
+            document.getElementById('title').focus();
+        }
+
+        function renderTracks() {
+            const list = document.getElementById('trackList');
+            list.innerHTML = '';
+
+            if (tracks.length === 0) return;
+
+            const title = document.createElement('div');
+            title.style.fontWeight = '600';
+            title.style.marginTop = '20px';
+            title.style.marginBottom = '10px';
+            title.style.fontSize = '13px';
+            title.textContent = `Tagged Tracks (${tracks.length})`;
+            list.appendChild(title);
+
+            tracks.forEach(track => {
+                const div = document.createElement('div');
+                div.className = 'track-item';
+                div.innerHTML = `
+                    <div class="track-info">
+                        <div class="track-title">${escapeHtml(track.title)} - ${escapeHtml(track.artist)}</div>
+                        <div class="track-meta">${track.duration || '?'} • ${track.genre || '?'} • ${track.bpm || '?'} BPM • Plays: ${track.playCount}</div>
+                        <div class="track-tags">
+                            ${track.tags.time ? track.tags.time + ' (' + track.confidence.time + ')' : '—'} |
+                            ${track.tags.role ? track.tags.role + ' (' + track.confidence.role + ')' : '—'} |
+                            ${track.tags.crowd ? track.tags.crowd + ' (' + track.confidence.crowd + ')' : '—'}
+                        </div>
+                    </div>
+                    <button class="btn-delete" onclick="deleteTrack(${track.id})">Delete</button>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        function updateOutput() {
+            document.getElementById('trackCount').textContent = tracks.length;
+            updateMarkdownTable();
+            updateJSON();
+        }
+
+        function updateMarkdownTable() {
+            let md = '| Artist | Title | Duration | Play Count | Time | Role | Crowd | Notes |\n';
+            md += '|--------|-------|----------|------------|------|------|-------|-------|\n';
+
+            tracks.forEach(t => {
+                const time = t.tags.time ? `${formatTag(t.tags.time)} (${t.confidence.time})` : '—';
+                const role = t.tags.role ? `${formatTag(t.tags.role)} (${t.confidence.role})` : '—';
+                const crowd = t.tags.crowd ? `${formatTag(t.tags.crowd)} (${t.confidence.crowd})` : '—';
+                const notes = t.genre || '';
+
+                md += `| ${t.artist} | ${t.title} | ${t.duration} | ${t.playCount} | ${time} | ${role} | ${crowd} | ${notes} |\n`;
+            });
+
+            document.getElementById('markdownOutput').value = md;
+        }
+
+        function updateJSON() {
+            const json = {
+                tracks: tracks.map(t => ({
+                    id: t.id,
+                    artist: t.artist,
+                    title: t.title,
+                    duration: t.duration,
+                    genre: t.genre,
+                    bpm: t.bpm,
+                    key: t.key,
+                    playCount: t.playCount,
+                    tags: t.tags,
+                    confidence: t.confidence,
+                    spatial: {
+                        x: 0,
+                        y: 0
+                    }
+                }))
+            };
+
+            document.getElementById('jsonOutput').value = JSON.stringify(json, null, 2);
+        }
+
+        function formatTag(tag) {
+            return tag.replace('-', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function copyMarkdownTable() {
+            const text = document.getElementById('markdownOutput').value;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Markdown table copied to clipboard!');
+            });
+        }
+
+        function copyJSON() {
+            const text = document.getElementById('jsonOutput').value;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('JSON copied to clipboard!');
+            });
+        }
+
+        // Focus on title input on load
+        document.getElementById('title').focus();
+    </script>
+</body>
+</html>
