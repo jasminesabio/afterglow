@@ -318,17 +318,16 @@
             <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
 
             <div class="form-group">
-                <label>Time/Setting</label>
-                <select id="time">
-                    <option value="">-- Select --</option>
-                    <option value="sunrise-reset">Sunrise Reset</option>
-                    <option value="warm-up">Warm-up</option>
-                    <option value="festival-brunch">Festival Brunch</option>
-                    <option value="pool-party">Pool Party</option>
-                    <option value="post-game">Post-game</option>
-                    <option value="club">Club</option>
-                    <option value="late-night-warehouse">Late Night Warehouse</option>
-                </select>
+                <label>Time/Setting (pick 1–2)</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; background: #f9f9f9; border-radius: 4px;">
+                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="sunrise-reset" style="margin-right: 6px; cursor: pointer;"> Sunrise Reset</label>
+                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="warm-up" style="margin-right: 6px; cursor: pointer;"> Warm-up</label>
+                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="festival-brunch" style="margin-right: 6px; cursor: pointer;"> Festival Brunch</label>
+                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="pool-party" style="margin-right: 6px; cursor: pointer;"> Pool Party</label>
+                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="post-game" style="margin-right: 6px; cursor: pointer;"> Post-game</label>
+                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="club" style="margin-right: 6px; cursor: pointer;"> Club</label>
+                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="late-night-warehouse" style="margin-right: 6px; cursor: pointer;"> Late Night Warehouse</label>
+                </div>
             </div>
 
             <div class="form-group">
@@ -436,6 +435,10 @@
                 return;
             }
 
+            // Get selected time/setting checkboxes
+            const timeCheckboxes = document.querySelectorAll('input[name="timeCheckbox"]:checked');
+            const selectedTimes = Array.from(timeCheckboxes).map(cb => cb.value);
+
             const track = {
                 id: nextId++,
                 title,
@@ -446,7 +449,7 @@
                 key: document.getElementById('key').value.trim(),
                 playCount: parseInt(document.getElementById('playCount').value) || 0,
                 tags: {
-                    time: document.getElementById('time').value,
+                    time: selectedTimes,
                     role: document.getElementById('role').value,
                     crowd: document.getElementById('crowd').value
                 },
@@ -477,7 +480,7 @@
             document.getElementById('bpm').value = '';
             document.getElementById('key').value = '';
             document.getElementById('playCount').value = '0';
-            document.getElementById('time').value = '';
+            document.querySelectorAll('input[name="timeCheckbox"]').forEach(cb => cb.checked = false);
             document.getElementById('role').value = '';
             document.getElementById('crowd').value = '';
             document.getElementById('timeConfidence').value = 5;
@@ -506,14 +509,17 @@
             tracks.forEach(track => {
                 const div = document.createElement('div');
                 div.className = 'track-item';
+                const timeStr = Array.isArray(track.tags.time) && track.tags.time.length > 0
+                    ? track.tags.time.map(t => formatTag(t)).join(' + ') + ' (' + track.confidence.time + ')'
+                    : '—';
                 div.innerHTML = `
                     <div class="track-info">
                         <div class="track-title">${escapeHtml(track.title)} - ${escapeHtml(track.artist)}</div>
                         <div class="track-meta">${track.duration || '?'} • ${track.genre || '?'} • ${track.bpm || '?'} BPM • Plays: ${track.playCount}</div>
                         <div class="track-tags">
-                            ${track.tags.time ? track.tags.time + ' (' + track.confidence.time + ')' : '—'} |
-                            ${track.tags.role ? track.tags.role + ' (' + track.confidence.role + ')' : '—'} |
-                            ${track.tags.crowd ? track.tags.crowd + ' (' + track.confidence.crowd + ')' : '—'}
+                            ${timeStr} |
+                            ${track.tags.role ? formatTag(track.tags.role) + ' (' + track.confidence.role + ')' : '—'} |
+                            ${track.tags.crowd ? formatTag(track.tags.crowd) + ' (' + track.confidence.crowd + ')' : '—'}
                         </div>
                     </div>
                     <button class="btn-delete" onclick="deleteTrack(${track.id})">Delete</button>
@@ -533,12 +539,14 @@
             md += '|--------|-------|----------|------------|------|------|-------|-------|\n';
 
             tracks.forEach(t => {
-                const time = t.tags.time ? `${formatTag(t.tags.time)} (${t.confidence.time})` : '—';
+                const timeStr = Array.isArray(t.tags.time) && t.tags.time.length > 0
+                    ? t.tags.time.map(x => formatTag(x)).join(' + ') + ` (${t.confidence.time})`
+                    : '—';
                 const role = t.tags.role ? `${formatTag(t.tags.role)} (${t.confidence.role})` : '—';
                 const crowd = t.tags.crowd ? `${formatTag(t.tags.crowd)} (${t.confidence.crowd})` : '—';
                 const notes = t.genre || '';
 
-                md += `| ${t.artist} | ${t.title} | ${t.duration} | ${t.playCount} | ${time} | ${role} | ${crowd} | ${notes} |\n`;
+                md += `| ${t.artist} | ${t.title} | ${t.duration} | ${t.playCount} | ${timeStr} | ${role} | ${crowd} | ${notes} |\n`;
             });
 
             document.getElementById('markdownOutput').value = md;

@@ -24,7 +24,7 @@ Each answer is a tag. Together, they create a multidimensional map of your libra
 
 These tags describe real-world DJ scenarios where you'd use a track.
 
-✓ **These are decided and mutually exclusive (not simultaneous).**
+✓ **These are decided (pick 1–2).** Most tracks fit one context. Some tracks genuinely work across two scenarios—tag both if honest. For example, a track might work for both Pool Party (daytime social) and Post-game (lingering after peak), or both Club (peak dancefloor) and Late Night Warehouse (experimental).
 
 ### Warm-up
 **When:** Early in an event, before the main energy builds  
@@ -290,19 +290,20 @@ Same logic, different scenarios.
 
 When assigning tags to a new track:
 
-1. **"When would I actually play this?"** → Time/Setting tag(s)
-   - Be honest. If it's multiple contexts, tag multiple.
-   - If it only works at sunrise, tag only Sunrise Reset (don't force other contexts).
+1. **"When would I actually play this?"** → Time/Setting tag(s) — pick 1–2
+   - Most tracks fit one context. Tag that one.
+   - If it genuinely works across two scenarios, tag both. Example: a smooth ambient track might work for Pool Party AND Sunrise Reset.
+   - Don't force multi-tags. Be honest about where the track actually fits.
 
-2. **"What does this track *do* in a set? Does it open, bridge, reset, or close?"** → Journey Role tag
+2. **"What does this track *do* in a set? Does it open, bridge, reset, or close?"** → Journey Role tag — pick 1
    - Most tracks are Bridges. That's fine.
    - Some tracks are pure Openers or pure Home Stretches. Tag accordingly.
-   - A track can be a Bridge in one context and a Reset in another (tag both Time tags, one role).
+   - A track serves one role per set context; you only pick one.
 
-3. **"What kind of crowd attention does this need or work well with?"** → Crowd State tag(s)
-   - Lock-in tracks demand presence. Wanderer tracks allow distraction.
-   - Some tracks work in both (tag both).
-   - Be honest about the track's "forgiveness."
+3. **"What kind of crowd attention does this need or work well with?"** → Crowd State tag(s) — pick 1–2
+   - Lock-in tracks demand focused attention. Wanderer tracks allow ambient listening.
+   - Some tracks work in both (tag both). Example: a groovy track that works whether people are locked in or chatting.
+   - Be honest about the track's versatility.
 
 ---
 

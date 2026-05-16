@@ -52,6 +52,7 @@ Track Detail View (artist, duration, tags, play count)
 | Dimension | X-Axis | Y-Axis | Color/Grouping |
 |-----------|--------|--------|----------------|
 | **Axis name** | Journey Role | Crowd State | Time/Setting |
+| **Picks** | 1 (required) | 1–2 (can work in multiple) | 1–2 (can work across contexts) |
 | **Range** | Opener (0) → Home Stretch (3) | Arrivals (0) → Wanderers (2) | Pool Party = warm tones |
 | **Visual** | Left to right | Top to bottom | Color/background grouping |
 
@@ -203,9 +204,11 @@ Example sources: Free Music Archive, Incompetech, Bandcamp, YouTube Audio Librar
 
 For each track, ask three questions:
 
-1. **"When would I play this?"** → Time/Setting (choose 1–2, usually 1)
-   - Warm-up, Pool Party, Festival Brunch, Post-game, Sunrise Reset
+1. **"When would I play this?"** → Time/Setting (choose 1–2)
+   - Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Post-game, Club, Late Night Warehouse
+   - Most tracks fit one context. Some genuinely work across two (tag both).
    - Example: This uplifting house groove? Pool Party.
+   - Example: This transitional ambient track works for both Pool Party wind-down and Post-game? Tag both.
 
 2. **"What does this track do in a set?"** → Journey Role (choose 1)
    - Opener, Bridge, Reset, Home Stretch
@@ -213,7 +216,7 @@ For each track, ask three questions:
 
 3. **"What crowd state does it need or work with?"** → Crowd State (choose 1–2)
    - Arrivals, Lock-in, Wanderers
-   - Example: This groovy track can work whether people are focused or chatting? Both.
+   - Example: This groovy track can work whether people are focused or chatting? Tag both.
 
 **Output:** Tagged JSON file with artist, title, duration, play count, and three tags.
 

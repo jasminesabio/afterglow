@@ -49,7 +49,7 @@
 
 ✓ **Three dimensions (locked in)**
 
-### Time/Setting (pick 1, usually)
+### Time/Setting (pick 1–2)
 - Sunrise Reset
 - Warm-up
 - Festival Brunch
@@ -57,6 +57,8 @@
 - Post-game
 - Club
 - Late Night Warehouse
+
+Most tracks fit one time/setting. Some tracks genuinely work across two (e.g., a track that bridges Pool Party and Post-game energy). Tag both if honest.
 
 ### Journey Role (pick 1)
 - Opener

@@ -343,9 +343,9 @@ These are resolved or will be during planning/build:
 |------|-----------|
 | **Constellation** | Spatial arrangement of tracks by performance contexts (zones) |
 | **Zone** | Cluster within constellation (Arrivals, Lock-in, Wanderers) |
-| **Time/Setting** | When/where you'd play a track (Pool Party, Sunrise Reset, etc.) |
-| **Journey Role** | What a track does in a set (Opener, Bridge, Reset, Home Stretch) |
-| **Crowd State** | Who's here and what's their attention (Arrivals, Lock-in, Wanderers) |
+| **Time/Setting** | When/where you'd play a track (Pool Party, Sunrise Reset, etc.). Pick 1–2. |
+| **Journey Role** | What a track does in a set (Opener, Bridge, Reset, Home Stretch). Pick 1. |
+| **Crowd State** | Who's here and what's their attention (Arrivals, Lock-in, Wanderers). Pick 1–2. |
 | **Rediscovery** | Finding underplayed material in context |
 | **Underplayed** | Track with play count < 5 |
 | **MVP** | Minimum viable product for hackathon (Pool Party + demo) |
