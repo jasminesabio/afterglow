@@ -116,7 +116,7 @@ Warehouse tracks have more space and less conventional structure than Club track
 
 These tags describe the structural role a track plays in moving people and energy.
 
-✓ **These are decided and functionally exclusive.**
+✓ **Pick 1–2+ roles. Each gets its own confidence (1-10).** A track can be primarily a Bridge (conf: 9) and secondarily a Reset (conf: 4), or equally an Opener and Bridge (both 8). Rate your certainty for each role separately.
 
 ### Opener
 **Purpose:** Establishes the initial energy and emotional tone  
@@ -295,10 +295,12 @@ When assigning tags to a new track:
    - If it genuinely works across two scenarios, tag both. Example: a smooth ambient track might work for Pool Party AND Sunrise Reset.
    - Don't force multi-tags. Be honest about where the track actually fits.
 
-2. **"What does this track *do* in a set? Does it open, bridge, reset, or close?"** → Journey Role tag — pick 1
+2. **"What does this track *do* in a set?"** → Journey Role tag(s) — pick 1–2+, each with confidence (1-10)
    - Most tracks are Bridges. That's fine.
-   - Some tracks are pure Openers or pure Home Stretches. Tag accordingly.
-   - A track serves one role per set context; you only pick one.
+   - A track can be primarily one role and secondarily another. Tag both and rate each.
+   - Example: "This is 90% Bridge (9) but could also work as a Reset (4)."
+   - Example: "This is equally Opener and Bridge (both 8)."
+   - Be honest about versatility, but rate certainty independently.
 
 3. **"What kind of crowd attention does this need or work well with?"** → Crowd State tag(s) — pick 1–2
    - Lock-in tracks demand focused attention. Wanderer tracks allow ambient listening.

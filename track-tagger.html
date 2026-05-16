@@ -48,12 +48,47 @@
             margin-bottom: 15px;
         }
 
+        .form-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
         label {
             display: block;
             font-weight: 600;
-            margin-bottom: 6px;
             color: #333;
             font-size: 13px;
+        }
+
+        .help-text {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 18px;
+            font-size: 12px;
+            cursor: help;
+            position: relative;
+        }
+
+        .help-text:hover::after {
+            content: attr(data-help);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 1000;
+            font-weight: normal;
         }
 
         input[type="text"],
@@ -103,14 +138,36 @@
             border: none;
         }
 
-        .confidence-input {
+        .tag-option {
             display: flex;
-            gap: 10px;
-            align-items: center;
+            align-items: stretch;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: #f9f9f9;
+            border-radius: 4px;
         }
 
-        .confidence-input input[type="range"] {
+        .tag-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tag-checkbox input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .tag-confidence {
             flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tag-confidence input[type="range"] {
+            margin: 0;
         }
 
         .confidence-value {
@@ -118,7 +175,16 @@
             text-align: center;
             font-weight: 600;
             color: #4a90e2;
-            font-size: 14px;
+            font-size: 12px;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
         }
 
         .button-group {
@@ -178,7 +244,7 @@
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             font-size: 13px;
         }
 
@@ -199,8 +265,9 @@
 
         .track-tags {
             color: #4a90e2;
-            font-size: 12px;
+            font-size: 11px;
             margin-top: 4px;
+            line-height: 1.4;
         }
 
         .btn-delete {
@@ -211,14 +278,11 @@
             border-radius: 3px;
             cursor: pointer;
             font-size: 12px;
+            white-space: nowrap;
         }
 
         .btn-delete:hover {
             background: #ee5a52;
-        }
-
-        .output {
-            margin-top: 20px;
         }
 
         .output-section {
@@ -278,7 +342,7 @@
         <!-- Input Panel -->
         <div class="panel">
             <h1>🎵 Track Tagger</h1>
-            <p class="subtitle">Tag your tracks with confidence scores</p>
+            <p class="subtitle">Tag tracks with per-tag confidence scores</p>
 
             <div class="form-group">
                 <label>Track Title *</label>
@@ -317,62 +381,31 @@
 
             <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
 
+            <!-- Time/Setting -->
             <div class="form-group">
-                <label>Time/Setting (pick 1–2)</label>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; background: #f9f9f9; border-radius: 4px;">
-                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="sunrise-reset" style="margin-right: 6px; cursor: pointer;"> Sunrise Reset</label>
-                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="warm-up" style="margin-right: 6px; cursor: pointer;"> Warm-up</label>
-                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="festival-brunch" style="margin-right: 6px; cursor: pointer;"> Festival Brunch</label>
-                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="pool-party" style="margin-right: 6px; cursor: pointer;"> Pool Party</label>
-                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="post-game" style="margin-right: 6px; cursor: pointer;"> Post-game</label>
-                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="club" style="margin-right: 6px; cursor: pointer;"> Club</label>
-                    <label style="display: flex; align-items: center; font-weight: 400; margin: 0;"><input type="checkbox" name="timeCheckbox" value="late-night-warehouse" style="margin-right: 6px; cursor: pointer;"> Late Night Warehouse</label>
+                <div class="form-header">
+                    <label style="margin-bottom: 0;">Time/Setting (pick 1–2)</label>
+                    <div class="help-text" data-help="When would you play this? (e.g., Pool Party, Sunrise Reset)">?</div>
                 </div>
+                <div class="checkbox-grid" id="timeContainer"></div>
             </div>
 
+            <!-- Journey Role -->
             <div class="form-group">
-                <label>Time Confidence</label>
-                <div class="confidence-input">
-                    <input type="range" id="timeConfidence" min="1" max="10" value="5">
-                    <div class="confidence-value" id="timeConfidenceValue">5</div>
+                <div class="form-header">
+                    <label style="margin-bottom: 0;">Journey Role (pick 1–2+)</label>
+                    <div class="help-text" data-help="What does it do? Open a set, bridge energies, reset the crowd, or close?">?</div>
                 </div>
+                <div id="roleContainer"></div>
             </div>
 
+            <!-- Crowd State -->
             <div class="form-group">
-                <label>Journey Role</label>
-                <select id="role">
-                    <option value="">-- Select --</option>
-                    <option value="opener">Opener</option>
-                    <option value="bridge">Bridge</option>
-                    <option value="reset">Reset</option>
-                    <option value="home-stretch">Home Stretch</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Role Confidence</label>
-                <div class="confidence-input">
-                    <input type="range" id="roleConfidence" min="1" max="10" value="5">
-                    <div class="confidence-value" id="roleConfidenceValue">5</div>
+                <div class="form-header">
+                    <label style="margin-bottom: 0;">Crowd State (pick 1–2)</label>
+                    <div class="help-text" data-help="Who's listening? Arriving (split focus), Locked-in (fully present), or Wandering (socializing)?">?</div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label>Crowd State</label>
-                <select id="crowd">
-                    <option value="">-- Select --</option>
-                    <option value="arrivals">Arrivals</option>
-                    <option value="lock-in">Lock-in</option>
-                    <option value="wanderers">Wanderers</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Crowd Confidence</label>
-                <div class="confidence-input">
-                    <input type="range" id="crowdConfidence" min="1" max="10" value="5">
-                    <div class="confidence-value" id="crowdConfidenceValue">5</div>
-                </div>
+                <div class="checkbox-grid" id="crowdContainer"></div>
             </div>
 
             <div class="button-group">
@@ -413,18 +446,82 @@
         let tracks = [];
         let nextId = 1;
 
-        // Update confidence display
-        document.getElementById('timeConfidence').addEventListener('input', function() {
-            document.getElementById('timeConfidenceValue').textContent = this.value;
-        });
+        const timeOptions = [
+            { value: "sunrise-reset", label: "Sunrise Reset" },
+            { value: "warm-up", label: "Warm-up" },
+            { value: "festival-brunch", label: "Festival Brunch" },
+            { value: "pool-party", label: "Pool Party" },
+            { value: "post-game", label: "Post-game" },
+            { value: "club", label: "Club" },
+            { value: "late-night-warehouse", label: "Late Night Warehouse" }
+        ];
 
-        document.getElementById('roleConfidence').addEventListener('input', function() {
-            document.getElementById('roleConfidenceValue').textContent = this.value;
-        });
+        const roleOptions = [
+            { value: "opener", label: "Opener" },
+            { value: "bridge", label: "Bridge" },
+            { value: "reset", label: "Reset" },
+            { value: "home-stretch", label: "Home Stretch" }
+        ];
 
-        document.getElementById('crowdConfidence').addEventListener('input', function() {
-            document.getElementById('crowdConfidenceValue').textContent = this.value;
-        });
+        const crowdOptions = [
+            { value: "arrivals", label: "Arrivals" },
+            { value: "lock-in", label: "Lock-in" },
+            { value: "wanderers", label: "Wanderers" }
+        ];
+
+        // Initialize tag containers
+        function initializeTagContainers() {
+            const timeContainer = document.getElementById('timeContainer');
+            timeOptions.forEach(opt => {
+                timeContainer.innerHTML += `
+                    <label style="display: flex; align-items: center; margin: 0; font-weight: 400;">
+                        <input type="checkbox" class="timeCheckbox" value="${opt.value}" style="margin-right: 6px; cursor: pointer;">
+                        ${opt.label}
+                    </label>
+                `;
+            });
+
+            const roleContainer = document.getElementById('roleContainer');
+            roleOptions.forEach(opt => {
+                roleContainer.innerHTML += `
+                    <div class="tag-option">
+                        <div class="tag-checkbox">
+                            <input type="checkbox" class="roleCheckbox" value="${opt.value}">
+                            <label style="margin: 0; font-weight: 500;">${opt.label}</label>
+                        </div>
+                        <div class="tag-confidence" style="display: none;" data-role="${opt.value}">
+                            <input type="range" min="1" max="10" value="5" class="roleConfidence">
+                            <div class="confidence-value">5</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            const crowdContainer = document.getElementById('crowdContainer');
+            crowdOptions.forEach(opt => {
+                crowdContainer.innerHTML += `
+                    <label style="display: flex; align-items: center; margin: 0; font-weight: 400;">
+                        <input type="checkbox" class="crowdCheckbox" value="${opt.value}" style="margin-right: 6px; cursor: pointer;">
+                        ${opt.label}
+                    </label>
+                `;
+            });
+
+            // Add event listeners for role checkboxes
+            document.querySelectorAll('.roleCheckbox').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    const confidenceDiv = document.querySelector(`[data-role="${this.value}"]`);
+                    confidenceDiv.style.display = this.checked ? 'flex' : 'none';
+                });
+            });
+
+            // Add event listeners for confidence sliders
+            document.querySelectorAll('.roleConfidence').forEach(slider => {
+                slider.addEventListener('input', function() {
+                    this.nextElementSibling.textContent = this.value;
+                });
+            });
+        }
 
         function addTrack() {
             const title = document.getElementById('title').value.trim();
@@ -435,9 +532,17 @@
                 return;
             }
 
-            // Get selected time/setting checkboxes
-            const timeCheckboxes = document.querySelectorAll('input[name="timeCheckbox"]:checked');
-            const selectedTimes = Array.from(timeCheckboxes).map(cb => cb.value);
+            // Get selected time/settings with confidence
+            const selectedTimes = Array.from(document.querySelectorAll('.timeCheckbox:checked')).map(cb => cb.value);
+
+            // Get selected roles with confidence
+            const selectedRoles = Array.from(document.querySelectorAll('.roleCheckbox:checked')).map(cb => ({
+                value: cb.value,
+                confidence: parseInt(cb.closest('.tag-option').querySelector('.roleConfidence').value)
+            }));
+
+            // Get selected crowd states
+            const selectedCrowd = Array.from(document.querySelectorAll('.crowdCheckbox:checked')).map(cb => cb.value);
 
             const track = {
                 id: nextId++,
@@ -450,13 +555,8 @@
                 playCount: parseInt(document.getElementById('playCount').value) || 0,
                 tags: {
                     time: selectedTimes,
-                    role: document.getElementById('role').value,
-                    crowd: document.getElementById('crowd').value
-                },
-                confidence: {
-                    time: parseInt(document.getElementById('timeConfidence').value),
-                    role: parseInt(document.getElementById('roleConfidence').value),
-                    crowd: parseInt(document.getElementById('crowdConfidence').value)
+                    role: selectedRoles,
+                    crowd: selectedCrowd
                 }
             };
 
@@ -480,15 +580,12 @@
             document.getElementById('bpm').value = '';
             document.getElementById('key').value = '';
             document.getElementById('playCount').value = '0';
-            document.querySelectorAll('input[name="timeCheckbox"]').forEach(cb => cb.checked = false);
-            document.getElementById('role').value = '';
-            document.getElementById('crowd').value = '';
-            document.getElementById('timeConfidence').value = 5;
-            document.getElementById('roleConfidence').value = 5;
-            document.getElementById('crowdConfidence').value = 5;
-            document.getElementById('timeConfidenceValue').textContent = '5';
-            document.getElementById('roleConfidenceValue').textContent = '5';
-            document.getElementById('crowdConfidenceValue').textContent = '5';
+            document.querySelectorAll('.timeCheckbox').forEach(cb => cb.checked = false);
+            document.querySelectorAll('.roleCheckbox').forEach(cb => {
+                cb.checked = false;
+                document.querySelector(`[data-role="${cb.value}"]`).style.display = 'none';
+            });
+            document.querySelectorAll('.crowdCheckbox').forEach(cb => cb.checked = false);
             document.getElementById('title').focus();
         }
 
@@ -509,17 +606,27 @@
             tracks.forEach(track => {
                 const div = document.createElement('div');
                 div.className = 'track-item';
-                const timeStr = Array.isArray(track.tags.time) && track.tags.time.length > 0
-                    ? track.tags.time.map(t => formatTag(t)).join(' + ') + ' (' + track.confidence.time + ')'
+
+                const timeStr = track.tags.time.length > 0
+                    ? track.tags.time.map(t => formatTag(t)).join(' + ')
                     : '—';
+
+                const roleStr = track.tags.role.length > 0
+                    ? track.tags.role.map(r => `${formatTag(r.value)} (${r.confidence})`).join(', ')
+                    : '—';
+
+                const crowdStr = track.tags.crowd.length > 0
+                    ? track.tags.crowd.map(c => formatTag(c)).join(', ')
+                    : '—';
+
                 div.innerHTML = `
                     <div class="track-info">
                         <div class="track-title">${escapeHtml(track.title)} - ${escapeHtml(track.artist)}</div>
                         <div class="track-meta">${track.duration || '?'} • ${track.genre || '?'} • ${track.bpm || '?'} BPM • Plays: ${track.playCount}</div>
                         <div class="track-tags">
-                            ${timeStr} |
-                            ${track.tags.role ? formatTag(track.tags.role) + ' (' + track.confidence.role + ')' : '—'} |
-                            ${track.tags.crowd ? formatTag(track.tags.crowd) + ' (' + track.confidence.crowd + ')' : '—'}
+                            <strong>Time:</strong> ${timeStr}<br>
+                            <strong>Role:</strong> ${roleStr}<br>
+                            <strong>Crowd:</strong> ${crowdStr}
                         </div>
                     </div>
                     <button class="btn-delete" onclick="deleteTrack(${track.id})">Delete</button>
@@ -535,18 +642,16 @@
         }
 
         function updateMarkdownTable() {
-            let md = '| Artist | Title | Duration | Play Count | Time | Role | Crowd | Notes |\n';
-            md += '|--------|-------|----------|------------|------|------|-------|-------|\n';
+            let md = '| Artist | Title | Duration | Play Count | Time | Role (Conf) | Crowd | Notes |\n';
+            md += '|--------|-------|----------|------------|------|-------------|-------|-------|\n';
 
             tracks.forEach(t => {
-                const timeStr = Array.isArray(t.tags.time) && t.tags.time.length > 0
-                    ? t.tags.time.map(x => formatTag(x)).join(' + ') + ` (${t.confidence.time})`
-                    : '—';
-                const role = t.tags.role ? `${formatTag(t.tags.role)} (${t.confidence.role})` : '—';
-                const crowd = t.tags.crowd ? `${formatTag(t.tags.crowd)} (${t.confidence.crowd})` : '—';
+                const time = t.tags.time.length > 0 ? t.tags.time.map(x => formatTag(x)).join(' + ') : '—';
+                const role = t.tags.role.length > 0 ? t.tags.role.map(r => `${formatTag(r.value)} (${r.confidence})`).join(', ') : '—';
+                const crowd = t.tags.crowd.length > 0 ? t.tags.crowd.map(c => formatTag(c)).join(', ') : '—';
                 const notes = t.genre || '';
 
-                md += `| ${t.artist} | ${t.title} | ${t.duration} | ${t.playCount} | ${timeStr} | ${role} | ${crowd} | ${notes} |\n`;
+                md += `| ${t.artist} | ${t.title} | ${t.duration} | ${t.playCount} | ${time} | ${role} | ${crowd} | ${notes} |\n`;
             });
 
             document.getElementById('markdownOutput').value = md;
@@ -555,7 +660,6 @@
         function updateJSON() {
             const json = {
                 tracks: tracks.map(t => ({
-                    id: t.id,
                     artist: t.artist,
                     title: t.title,
                     duration: t.duration,
@@ -564,7 +668,6 @@
                     key: t.key,
                     playCount: t.playCount,
                     tags: t.tags,
-                    confidence: t.confidence,
                     spatial: {
                         x: 0,
                         y: 0
@@ -576,7 +679,7 @@
         }
 
         function formatTag(tag) {
-            return tag.replace('-', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+            return tag.replace(/-/g, ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
         }
 
         function escapeHtml(text) {
@@ -604,7 +707,8 @@
             });
         }
 
-        // Focus on title input on load
+        // Initialize on page load
+        initializeTagContainers();
         document.getElementById('title').focus();
     </script>
 </body>

@@ -30,9 +30,12 @@ Track Detail View (artist, duration, tags, play count)
       "duration": "6:42",
       "playCount": 2,
       "tags": {
-        "time": "pool-party",
-        "role": "bridge",
-        "crowd": "lock-in"
+        "time": ["pool-party"],
+        "role": [
+          {"value": "bridge", "confidence": 9},
+          {"value": "reset", "confidence": 4}
+        ],
+        "crowd": ["lock-in"]
       },
       "spatial": {
         "x": 105,
@@ -42,6 +45,13 @@ Track Detail View (artist, duration, tags, play count)
   ]
 }
 ```
+
+**Key structure:**
+- `time`: Array of time/settings (1-2 picks)
+- `role`: Array of objects with value + confidence (can be 1-3+ roles)
+- `crowd`: Array of crowd states (1-2 picks)
+- Each role gets individual confidence (1-10)
+
 
 ---
 
@@ -202,19 +212,21 @@ Example sources: Free Music Archive, Incompetech, Bandcamp, YouTube Audio Librar
 
 ### Tagging Process (Manual)
 
-For each track, ask three questions:
+For each track, ask three questions. **Each selected tag gets its own 1-10 confidence score.**
 
-1. **"When would I play this?"** → Time/Setting (choose 1–2)
+1. **"When would I play this?"** → Time/Setting (pick 1–2, no confidence)
    - Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Post-game, Club, Late Night Warehouse
    - Most tracks fit one context. Some genuinely work across two (tag both).
    - Example: This uplifting house groove? Pool Party.
    - Example: This transitional ambient track works for both Pool Party wind-down and Post-game? Tag both.
 
-2. **"What does this track do in a set?"** → Journey Role (choose 1)
+2. **"What does this track do in a set?"** → Journey Role (pick 1–2+, each with confidence 1-10)
    - Opener, Bridge, Reset, Home Stretch
-   - Example: This track transitions smoothly? Bridge.
+   - A track can be primarily one role and secondarily another. Rate each separately.
+   - Example: This track primarily transitions (Bridge: 9) but could also reset energy (Reset: 4).
+   - Example: This track is equally Opener (8) and Bridge (8)—it works both ways.
 
-3. **"What crowd state does it need or work with?"** → Crowd State (choose 1–2)
+3. **"What crowd state does it need or work with?"** → Crowd State (pick 1–2, no confidence)
    - Arrivals, Lock-in, Wanderers
    - Example: This groovy track can work whether people are focused or chatting? Tag both.
 

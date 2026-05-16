@@ -47,7 +47,7 @@
 
 ## 4. Tagging System
 
-✓ **Three dimensions (locked in)**
+✓ **Three dimensions (locked in), with per-tag confidence scores**
 
 ### Time/Setting (pick 1–2)
 - Sunrise Reset
@@ -60,16 +60,21 @@
 
 Most tracks fit one time/setting. Some tracks genuinely work across two (e.g., a track that bridges Pool Party and Post-game energy). Tag both if honest.
 
-### Journey Role (pick 1)
+### Journey Role (pick 1–2+)
 - Opener
 - Bridge
 - Reset
 - Home Stretch
 
+A track can legitimately serve multiple roles. A track might be primarily a Bridge (conf: 9) but secondarily work as a Reset (conf: 5). Each role gets its own 1-10 confidence score.
+
 ### Crowd State (pick 1–2)
 - Arrivals
 - Lock-in
 - Wanderers
+
+### Confidence Scoring
+Each selected tag gets its own 1-10 confidence score, not the dimension overall. This allows nuance: "This is definitely a Bridge (9) but could work as a Reset (4)."
 
 **MVP scope:** Pool Party constellation only. Other time/settings available for future phases. **No custom tags.** These tags are sufficient. Post-hackathon: explore user customization.
 
