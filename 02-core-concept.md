@@ -6,19 +6,21 @@
 
 ## Layer 1: Timeline View (Choose Your Context)
 
-**What it shows:** Five time-of-day phases representing different event moments
+**What it shows:** Seven time-of-day/context phases representing different event moments
 
 ```
-Sunrise Reset  |  Warm-up  |  Festival Brunch  |  Pool Party  |  Post-game  |  Late Night
+Sunrise Reset  |  Warm-up  |  Festival Brunch  |  Pool Party  |  Post-game  |  Club  |  Late Night Warehouse
 ```
 
 **Why these phases?**
 These represent the real DJ scenarios people face:
-- **Warm-up:** Early, setting the vibe (6–9 pm)
-- **Pool Party:** Peak fun, uplifting (4–7 pm)
-- **Festival Brunch:** Daytime, social (10 am–2 pm)
-- **Post-game:** Late night, energy variable (11 pm–2 am)
-- **Sunrise Reset:** Dawn, contemplative (5–8 am)
+- **Sunrise Reset:** Dawn, contemplative, wind-down (5–8 am)
+- **Warm-up:** Early evening, setting the vibe (6–9 pm)
+- **Festival Brunch:** Daytime, social, lighter energy (10 am–2 pm)
+- **Pool Party:** Afternoon, peak fun, uplifting (4–7 pm)
+- **Post-game:** Late night, energy variable, flex (11 pm–2 am)
+- **Club:** Peak dancefloor energy, dark, high energy (11 pm–4 am)
+- **Late Night Warehouse:** Deep, hypnotic, sustained energy (2 am–sunrise)
 
 **User action:** Click "Pool Party" → constellation loads
 

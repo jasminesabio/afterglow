@@ -86,6 +86,30 @@ Sunrise is a threshold moment. Tracks work here because they acknowledge the shi
 
 ---
 
+### Club
+**When:** Peak dancefloor moment in a dark, intimate venue  
+**Performance moment:** The crowd is fully locked in, dancing, energy is high and sustained  
+**Feel:** Dark, hypnotic, driving. High energy but not chaotic. Sophisticated power  
+**Real scenario:** 1–3 am in a nightclub. 300+ people dancing, focused on the sound, bodies moving  
+**What it's NOT:** Not "hard" or "aggressive"—Club energy is *controlled power*. Not the same as Late Night Warehouse (which is more experimental/hypnotic).
+
+**Why this tag is musically specific:**
+Club tracks need to work in a dark, bouncy context where the dancefloor is the primary focus. They're usually 4/4, driving, with clear rhythmic intent. Different from Post-game (which is lingering) or Late Night Warehouse (which has more space/ambition).
+
+---
+
+### Late Night Warehouse
+**When:** Deep into the night, experimental, hypnotic context  
+**Performance moment:** The crowd is committed, experienced, open to experimentation. Time feels different  
+**Feel:** Spacious, hypnotic, experimental. High energy but with room to breathe. Sophisticated and risky  
+**Real scenario:** 4 am–sunrise at a warehouse party. 50–200 people, evolved dancers, willingness to go deep  
+**What it's NOT:** Not "weird for weird's sake"—Late Night Warehouse has intention and sophistication. Not aggressive or chaotic.
+
+**Why this tag is musically specific:**
+Warehouse tracks have more space and less conventional structure than Club tracks. They ask listeners to surrender to the hypnotic or experimental journey. Different from Club (which is dancefloor-focused) or Sunrise Reset (which is literal sunrise/wind-down).
+
+---
+
 ## Dimension 2: Journey Role (Functional Purpose in a Set)
 
 **The question:** What does this track *do* in the arc of a set?

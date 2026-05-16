@@ -129,7 +129,7 @@ Anyone preparing for **uncertain performance scenarios** (unknown timing, unknow
 ## 6. Functional Requirements
 
 ### Timeline View
-- **Display:** Five time phases (Warm-up, Pool Party, Festival Brunch, Post-game, Sunrise Reset)
+- **Display:** Seven time/setting phases (Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Post-game, Club, Late Night Warehouse)
 - **Interaction:** Click phase → loads constellation view
 - **Behavior:** Visual feedback on selected phase
 
