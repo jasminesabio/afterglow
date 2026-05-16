@@ -24,7 +24,7 @@ Each answer is a tag. Together, they create a multidimensional map of your libra
 
 These tags describe real-world DJ scenarios where you'd use a track.
 
-✓ **These are decided (pick 1–2).** Most tracks fit one context. Some tracks genuinely work across two scenarios—tag both if honest. For example, a track might work for both Pool Party (daytime social) and Post-game (lingering after peak), or both Club (peak dancefloor) and Late Night Warehouse (experimental).
+✓ **Pick 1–2, each with confidence (1-10).** Most tracks fit one context (rate 8-10). Some tracks genuinely work across two scenarios—tag both if honest, rating each independently. For example, a track might work for both Pool Party (9) and Post-game (5), or both Club (8) and Late Night Warehouse (8).
 
 ### Warm-up
 **When:** Early in an event, before the main energy builds  
@@ -172,7 +172,7 @@ Home Stretch is the closing statement. It has to honor the journey people have b
 
 These tags describe real-time crowd dynamics, not just energy levels.
 
-✓ **These are decided and contextually exclusive (one crowd state at a time, though a track can work in multiple states).**
+✓ **Pick 1–2, each with confidence (1-10).** A track might work best with Lock-in (8) but also with Wanderers (5). Rate each independently.
 
 ### Arrivals
 **Who:** People still coming in. Not everyone has arrived. Energy is building but not unified  
@@ -288,24 +288,27 @@ Same logic, different scenarios.
 
 ### The Three-Question Process
 
-When assigning tags to a new track:
+When assigning tags to a new track: **Each selected tag gets its own 1-10 confidence score.**
 
-1. **"When would I actually play this?"** → Time/Setting tag(s) — pick 1–2
-   - Most tracks fit one context. Tag that one.
-   - If it genuinely works across two scenarios, tag both. Example: a smooth ambient track might work for Pool Party AND Sunrise Reset.
+1. **"When would I actually play this?"** → Time/Setting tag(s) — pick 1–2, each with confidence (1-10)
+   - Most tracks fit one context (rate 8-10). Tag that one confidently.
+   - If it genuinely works across two scenarios, tag both and rate each independently.
+   - Example: "Pool Party (9)" ← confident
+   - Example: "Pool Party (9) + Post-game (5)" ← works in both, but Pool Party is primary
    - Don't force multi-tags. Be honest about where the track actually fits.
 
 2. **"What does this track *do* in a set?"** → Journey Role tag(s) — pick 1–2+, each with confidence (1-10)
-   - Most tracks are Bridges. That's fine.
-   - A track can be primarily one role and secondarily another. Tag both and rate each.
-   - Example: "This is 90% Bridge (9) but could also work as a Reset (4)."
-   - Example: "This is equally Opener and Bridge (both 8)."
+   - Most tracks are Bridges. That's fine—rate it 8-10.
+   - A track can be primarily one role and secondarily another. Tag both and rate each independently.
+   - Example: "Bridge (9)" ← confident transition
+   - Example: "Bridge (9) + Reset (4)" ← primarily transitions, but could also recalibrate
+   - Example: "Opener (8) + Bridge (8)" ← equally works as both
    - Be honest about versatility, but rate certainty independently.
 
-3. **"What kind of crowd attention does this need or work well with?"** → Crowd State tag(s) — pick 1–2
+3. **"What kind of crowd attention does this need or work well with?"** → Crowd State tag(s) — pick 1–2, each with confidence (1-10)
    - Lock-in tracks demand focused attention. Wanderer tracks allow ambient listening.
-   - Some tracks work in both (tag both). Example: a groovy track that works whether people are locked in or chatting.
-   - Be honest about the track's versatility.
+   - Some tracks work in both (tag both, rate each). Example: a groovy track that works whether people are locked in (9) or chatting (6).
+   - Be honest about the track's versatility and rate your certainty for each state.
 
 ---
 

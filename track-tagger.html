@@ -45,14 +45,14 @@
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .form-header {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
         }
 
         label {
@@ -62,7 +62,7 @@
             font-size: 13px;
         }
 
-        .help-text {
+        .help-icon {
             display: inline-block;
             width: 18px;
             height: 18px;
@@ -72,23 +72,37 @@
             line-height: 18px;
             font-size: 12px;
             cursor: help;
-            position: relative;
+            color: #666;
+            font-weight: bold;
         }
 
-        .help-text:hover::after {
-            content: attr(data-help);
-            position: absolute;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #333;
+        .help-icon:hover {
+            background: #4a90e2;
             color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
+        }
+
+        .tag-definitions {
+            background: #f0f7ff;
+            border-left: 3px solid #4a90e2;
+            padding: 10px 12px;
+            border-radius: 3px;
+            margin-top: 8px;
+            margin-bottom: 10px;
             font-size: 12px;
-            white-space: nowrap;
-            z-index: 1000;
-            font-weight: normal;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .tag-def-item {
+            margin-bottom: 6px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag-def-label {
+            font-weight: 600;
+            min-width: 120px;
+            color: #4a90e2;
         }
 
         input[type="text"],
@@ -159,11 +173,19 @@
             cursor: pointer;
         }
 
+        .tag-checkbox label {
+            margin: 0;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
         .tag-confidence {
             flex: 1;
             display: flex;
             align-items: center;
             gap: 8px;
+            padding-left: 8px;
+            border-left: 1px solid #e0e0e0;
         }
 
         .tag-confidence input[type="range"] {
@@ -182,9 +204,21 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 4px;
+        }
+
+        .checkbox-grid .tag-option {
+            grid-column: span 1;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .checkbox-grid .tag-checkbox {
+            flex: 1;
+        }
+
+        .checkbox-grid .tag-confidence {
+            border-left: none;
+            padding-left: 24px;
         }
 
         .button-group {
@@ -267,7 +301,7 @@
             color: #4a90e2;
             font-size: 11px;
             margin-top: 4px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .btn-delete {
@@ -384,8 +418,17 @@
             <!-- Time/Setting -->
             <div class="form-group">
                 <div class="form-header">
-                    <label style="margin-bottom: 0;">Time/Setting (pick 1–2)</label>
-                    <div class="help-text" data-help="When would you play this? (e.g., Pool Party, Sunrise Reset)">?</div>
+                    <label style="margin-bottom: 0;">Time/Setting (pick 1–2, each with confidence)</label>
+                    <div class="help-icon" title="When would you play this track?">?</div>
+                </div>
+                <div class="tag-definitions">
+                    <div class="tag-def-item"><span class="tag-def-label">Sunrise Reset:</span> <span>5–8am, literal or metaphorical sunrise, transcendent wind-down</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Warm-up:</span> <span>Early event, people arriving, vibe setting (no peak energy yet)</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Festival Brunch:</span> <span>Daytime, elevated, groovy but accessible (10am–2pm)</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Pool Party:</span> <span>Afternoon, social, fun, playful, peak leisure (4–7pm)</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Post-game:</span> <span>After main event, people lingering, energy variable</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Club:</span> <span>Peak dancefloor, dark, high energy, locked-in crowd</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Late Night Warehouse:</span> <span>Deep night, hypnotic, experimental, evolved dancers</span></div>
                 </div>
                 <div class="checkbox-grid" id="timeContainer"></div>
             </div>
@@ -393,8 +436,14 @@
             <!-- Journey Role -->
             <div class="form-group">
                 <div class="form-header">
-                    <label style="margin-bottom: 0;">Journey Role (pick 1–2+)</label>
-                    <div class="help-text" data-help="What does it do? Open a set, bridge energies, reset the crowd, or close?">?</div>
+                    <label style="margin-bottom: 0;">Journey Role (pick 1–2+, each with confidence)</label>
+                    <div class="help-icon" title="What does this track do in a set?">?</div>
+                </div>
+                <div class="tag-definitions">
+                    <div class="tag-def-item"><span class="tag-def-label">Opener:</span> <span>Makes statement, sets expectations, invites people in</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Bridge:</span> <span>Transitions between zones, holds attention while energy shifts</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Reset:</span> <span>Recalibrates energy, gives breathing room, clears the air</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Home Stretch:</span> <span>Moves toward closure, winds down or sends off with intention</span></div>
                 </div>
                 <div id="roleContainer"></div>
             </div>
@@ -402,8 +451,13 @@
             <!-- Crowd State -->
             <div class="form-group">
                 <div class="form-header">
-                    <label style="margin-bottom: 0;">Crowd State (pick 1–2)</label>
-                    <div class="help-text" data-help="Who's listening? Arriving (split focus), Locked-in (fully present), or Wandering (socializing)?">?</div>
+                    <label style="margin-bottom: 0;">Crowd State (pick 1–2, each with confidence)</label>
+                    <div class="help-icon" title="Who's listening? What's their attention?">?</div>
+                </div>
+                <div class="tag-definitions">
+                    <div class="tag-def-item"><span class="tag-def-label">Arrivals:</span> <span>People still coming in, split attention, settling in (not all eyes on you yet)</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Lock-in:</span> <span>Full crowd, fully present, unified attention, deep emotional engagement</span></div>
+                    <div class="tag-def-item"><span class="tag-def-label">Wanderers:</span> <span>Crowd distributed, chatting, moving around (music is part of environment)</span></div>
                 </div>
                 <div class="checkbox-grid" id="crowdContainer"></div>
             </div>
@@ -474,10 +528,16 @@
             const timeContainer = document.getElementById('timeContainer');
             timeOptions.forEach(opt => {
                 timeContainer.innerHTML += `
-                    <label style="display: flex; align-items: center; margin: 0; font-weight: 400;">
-                        <input type="checkbox" class="timeCheckbox" value="${opt.value}" style="margin-right: 6px; cursor: pointer;">
-                        ${opt.label}
-                    </label>
+                    <div class="tag-option">
+                        <div class="tag-checkbox">
+                            <input type="checkbox" class="timeCheckbox" value="${opt.value}">
+                            <label>${opt.label}</label>
+                        </div>
+                        <div class="tag-confidence" style="display: none;" data-time="${opt.value}">
+                            <input type="range" min="1" max="10" value="5" class="timeConfidence">
+                            <div class="confidence-value">5</div>
+                        </div>
+                    </div>
                 `;
             });
 
@@ -487,7 +547,7 @@
                     <div class="tag-option">
                         <div class="tag-checkbox">
                             <input type="checkbox" class="roleCheckbox" value="${opt.value}">
-                            <label style="margin: 0; font-weight: 500;">${opt.label}</label>
+                            <label>${opt.label}</label>
                         </div>
                         <div class="tag-confidence" style="display: none;" data-role="${opt.value}">
                             <input type="range" min="1" max="10" value="5" class="roleConfidence">
@@ -500,11 +560,25 @@
             const crowdContainer = document.getElementById('crowdContainer');
             crowdOptions.forEach(opt => {
                 crowdContainer.innerHTML += `
-                    <label style="display: flex; align-items: center; margin: 0; font-weight: 400;">
-                        <input type="checkbox" class="crowdCheckbox" value="${opt.value}" style="margin-right: 6px; cursor: pointer;">
-                        ${opt.label}
-                    </label>
+                    <div class="tag-option">
+                        <div class="tag-checkbox">
+                            <input type="checkbox" class="crowdCheckbox" value="${opt.value}">
+                            <label>${opt.label}</label>
+                        </div>
+                        <div class="tag-confidence" style="display: none;" data-crowd="${opt.value}">
+                            <input type="range" min="1" max="10" value="5" class="crowdConfidence">
+                            <div class="confidence-value">5</div>
+                        </div>
+                    </div>
                 `;
+            });
+
+            // Add event listeners for time checkboxes
+            document.querySelectorAll('.timeCheckbox').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    const confidenceDiv = document.querySelector(`[data-time="${this.value}"]`);
+                    confidenceDiv.style.display = this.checked ? 'flex' : 'none';
+                });
             });
 
             // Add event listeners for role checkboxes
@@ -515,8 +589,16 @@
                 });
             });
 
-            // Add event listeners for confidence sliders
-            document.querySelectorAll('.roleConfidence').forEach(slider => {
+            // Add event listeners for crowd checkboxes
+            document.querySelectorAll('.crowdCheckbox').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    const confidenceDiv = document.querySelector(`[data-crowd="${this.value}"]`);
+                    confidenceDiv.style.display = this.checked ? 'flex' : 'none';
+                });
+            });
+
+            // Add event listeners for all confidence sliders
+            document.querySelectorAll('.timeConfidence, .roleConfidence, .crowdConfidence').forEach(slider => {
                 slider.addEventListener('input', function() {
                     this.nextElementSibling.textContent = this.value;
                 });
@@ -532,8 +614,11 @@
                 return;
             }
 
-            // Get selected time/settings with confidence
-            const selectedTimes = Array.from(document.querySelectorAll('.timeCheckbox:checked')).map(cb => cb.value);
+            // Get selected times with confidence
+            const selectedTimes = Array.from(document.querySelectorAll('.timeCheckbox:checked')).map(cb => ({
+                value: cb.value,
+                confidence: parseInt(cb.closest('.tag-option').querySelector('.timeConfidence').value)
+            }));
 
             // Get selected roles with confidence
             const selectedRoles = Array.from(document.querySelectorAll('.roleCheckbox:checked')).map(cb => ({
@@ -541,8 +626,11 @@
                 confidence: parseInt(cb.closest('.tag-option').querySelector('.roleConfidence').value)
             }));
 
-            // Get selected crowd states
-            const selectedCrowd = Array.from(document.querySelectorAll('.crowdCheckbox:checked')).map(cb => cb.value);
+            // Get selected crowd states with confidence
+            const selectedCrowd = Array.from(document.querySelectorAll('.crowdCheckbox:checked')).map(cb => ({
+                value: cb.value,
+                confidence: parseInt(cb.closest('.tag-option').querySelector('.crowdConfidence').value)
+            }));
 
             const track = {
                 id: nextId++,
@@ -580,12 +668,18 @@
             document.getElementById('bpm').value = '';
             document.getElementById('key').value = '';
             document.getElementById('playCount').value = '0';
-            document.querySelectorAll('.timeCheckbox').forEach(cb => cb.checked = false);
+            document.querySelectorAll('.timeCheckbox').forEach(cb => {
+                cb.checked = false;
+                document.querySelector(`[data-time="${cb.value}"]`).style.display = 'none';
+            });
             document.querySelectorAll('.roleCheckbox').forEach(cb => {
                 cb.checked = false;
                 document.querySelector(`[data-role="${cb.value}"]`).style.display = 'none';
             });
-            document.querySelectorAll('.crowdCheckbox').forEach(cb => cb.checked = false);
+            document.querySelectorAll('.crowdCheckbox').forEach(cb => {
+                cb.checked = false;
+                document.querySelector(`[data-crowd="${cb.value}"]`).style.display = 'none';
+            });
             document.getElementById('title').focus();
         }
 
@@ -608,7 +702,7 @@
                 div.className = 'track-item';
 
                 const timeStr = track.tags.time.length > 0
-                    ? track.tags.time.map(t => formatTag(t)).join(' + ')
+                    ? track.tags.time.map(t => `${formatTag(t.value)} (${t.confidence})`).join(' + ')
                     : '—';
 
                 const roleStr = track.tags.role.length > 0
@@ -616,7 +710,7 @@
                     : '—';
 
                 const crowdStr = track.tags.crowd.length > 0
-                    ? track.tags.crowd.map(c => formatTag(c)).join(', ')
+                    ? track.tags.crowd.map(c => `${formatTag(c.value)} (${c.confidence})`).join(', ')
                     : '—';
 
                 div.innerHTML = `
@@ -642,13 +736,13 @@
         }
 
         function updateMarkdownTable() {
-            let md = '| Artist | Title | Duration | Play Count | Time | Role (Conf) | Crowd | Notes |\n';
-            md += '|--------|-------|----------|------------|------|-------------|-------|-------|\n';
+            let md = '| Artist | Title | Duration | Play Count | Time | Role | Crowd | Notes |\n';
+            md += '|--------|-------|----------|------------|------|------|-------|-------|\n';
 
             tracks.forEach(t => {
-                const time = t.tags.time.length > 0 ? t.tags.time.map(x => formatTag(x)).join(' + ') : '—';
+                const time = t.tags.time.length > 0 ? t.tags.time.map(x => `${formatTag(x.value)} (${x.confidence})`).join(' + ') : '—';
                 const role = t.tags.role.length > 0 ? t.tags.role.map(r => `${formatTag(r.value)} (${r.confidence})`).join(', ') : '—';
-                const crowd = t.tags.crowd.length > 0 ? t.tags.crowd.map(c => formatTag(c)).join(', ') : '—';
+                const crowd = t.tags.crowd.length > 0 ? t.tags.crowd.map(c => `${formatTag(c.value)} (${c.confidence})`).join(', ') : '—';
                 const notes = t.genre || '';
 
                 md += `| ${t.artist} | ${t.title} | ${t.duration} | ${t.playCount} | ${time} | ${role} | ${crowd} | ${notes} |\n`;

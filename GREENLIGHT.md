@@ -47,9 +47,9 @@
 
 ## 4. Tagging System
 
-✓ **Three dimensions (locked in), with per-tag confidence scores**
+✓ **Three dimensions (locked in), with per-tag confidence scores (1-10)**
 
-### Time/Setting (pick 1–2)
+### Time/Setting (pick 1–2, each with confidence)
 - Sunrise Reset
 - Warm-up
 - Festival Brunch
@@ -58,23 +58,28 @@
 - Club
 - Late Night Warehouse
 
-Most tracks fit one time/setting. Some tracks genuinely work across two (e.g., a track that bridges Pool Party and Post-game energy). Tag both if honest.
+Most tracks fit one time/setting. Some tracks genuinely work across two (e.g., a track that bridges Pool Party and Post-game energy). Tag both with confidence: "Pool Party (9) + Post-game (6)"—the track definitely works for Pool Party but could also work for Post-game wind-down.
 
-### Journey Role (pick 1–2+)
+### Journey Role (pick 1–2+, each with confidence)
 - Opener
 - Bridge
 - Reset
 - Home Stretch
 
-A track can legitimately serve multiple roles. A track might be primarily a Bridge (conf: 9) but secondarily work as a Reset (conf: 5). Each role gets its own 1-10 confidence score.
+A track can legitimately serve multiple roles. "Bridge (9) + Reset (4)"—primarily a transition but secondarily works as a recalibration moment.
 
-### Crowd State (pick 1–2)
+### Crowd State (pick 1–2, each with confidence)
 - Arrivals
 - Lock-in
 - Wanderers
 
+A track might work in multiple crowd states: "Lock-in (8) + Wanderers (5)"—best with focused crowd but still works when people are chatting.
+
 ### Confidence Scoring
-Each selected tag gets its own 1-10 confidence score, not the dimension overall. This allows nuance: "This is definitely a Bridge (9) but could work as a Reset (4)."
+**Each selected tag gets its own 1-10 confidence score.** This allows nuance at every level:
+- "This is 90% Pool Party (9) but could work Sunrise Reset (4)"
+- "This is equally Opener and Bridge (both 8)"
+- "This works best Lock-in (9) but also fine with Wanderers (6)"
 
 **MVP scope:** Pool Party constellation only. Other time/settings available for future phases. **No custom tags.** These tags are sufficient. Post-hackathon: explore user customization.
 

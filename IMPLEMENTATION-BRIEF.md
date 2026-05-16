@@ -30,12 +30,17 @@ Track Detail View (artist, duration, tags, play count)
       "duration": "6:42",
       "playCount": 2,
       "tags": {
-        "time": ["pool-party"],
+        "time": [
+          {"value": "pool-party", "confidence": 9},
+          {"value": "post-game", "confidence": 5}
+        ],
         "role": [
           {"value": "bridge", "confidence": 9},
           {"value": "reset", "confidence": 4}
         ],
-        "crowd": ["lock-in"]
+        "crowd": [
+          {"value": "lock-in", "confidence": 8}
+        ]
       },
       "spatial": {
         "x": 105,
@@ -47,10 +52,10 @@ Track Detail View (artist, duration, tags, play count)
 ```
 
 **Key structure:**
-- `time`: Array of time/settings (1-2 picks)
-- `role`: Array of objects with value + confidence (can be 1-3+ roles)
-- `crowd`: Array of crowd states (1-2 picks)
-- Each role gets individual confidence (1-10)
+- `time`: Array of objects with value + confidence (1-2 picks, each 1-10)
+- `role`: Array of objects with value + confidence (1-3+ roles, each 1-10)
+- `crowd`: Array of objects with value + confidence (1-2 picks, each 1-10)
+- **Every selected tag gets individual confidence (1-10).** This allows precise nuance.
 
 
 ---
@@ -214,11 +219,11 @@ Example sources: Free Music Archive, Incompetech, Bandcamp, YouTube Audio Librar
 
 For each track, ask three questions. **Each selected tag gets its own 1-10 confidence score.**
 
-1. **"When would I play this?"** → Time/Setting (pick 1–2, no confidence)
+1. **"When would I play this?"** → Time/Setting (pick 1–2, each with confidence 1-10)
    - Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Post-game, Club, Late Night Warehouse
-   - Most tracks fit one context. Some genuinely work across two (tag both).
-   - Example: This uplifting house groove? Pool Party.
-   - Example: This transitional ambient track works for both Pool Party wind-down and Post-game? Tag both.
+   - Most tracks fit one context (rate it 8-10). Some work across two—rate each independently.
+   - Example: This uplifting house groove? Pool Party (9).
+   - Example: This transitional ambient track works for both Pool Party (8) and Post-game (5) wind-down.
 
 2. **"What does this track do in a set?"** → Journey Role (pick 1–2+, each with confidence 1-10)
    - Opener, Bridge, Reset, Home Stretch
@@ -226,9 +231,10 @@ For each track, ask three questions. **Each selected tag gets its own 1-10 confi
    - Example: This track primarily transitions (Bridge: 9) but could also reset energy (Reset: 4).
    - Example: This track is equally Opener (8) and Bridge (8)—it works both ways.
 
-3. **"What crowd state does it need or work with?"** → Crowd State (pick 1–2, no confidence)
+3. **"What crowd state does it need or work with?"** → Crowd State (pick 1–2, each with confidence 1-10)
    - Arrivals, Lock-in, Wanderers
-   - Example: This groovy track can work whether people are focused or chatting? Tag both.
+   - A track might work in multiple crowd states. Rate each independently.
+   - Example: This groovy track works best Lock-in (9) but also works if people are Wandering (6).
 
 **Output:** Tagged JSON file with artist, title, duration, play count, and three tags.
 
