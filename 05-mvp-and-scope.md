@@ -13,12 +13,12 @@
 ### 1. Timeline View (Phase Selection)
 
 **What it is:**
-A visual representation of the day's five phases. DJ clicks one phase to enter the constellation view.
+A visual representation of the day's seven time/setting phases. DJ clicks one phase to enter the constellation view.
 
 **Judge alignment:** All judges need this to understand the three-layer model.
 
 **Success criteria:**
-- Phases are clear (Warm-up, Pool Party, Festival Brunch, Post-game, Sunrise Reset)
+- Phases are clear (Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Post-game, Club, Late Night Warehouse)
 - Clicking transitions smoothly to constellation view
 - No confusion about what a phase means
 

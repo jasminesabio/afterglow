@@ -11,7 +11,7 @@
 ### Three-Layer Structure (User Facing)
 
 ```
-Timeline View (all 5 phases visible)
+Timeline View (all 7 phases visible)
     ↓ (click Pool Party)
 Constellation View (Pool Party phase, 3 zones, 40-50 tracks)
     ↓ (hover/click track)
@@ -103,11 +103,13 @@ No algorithm. Hardcoded. Clean. Traceable.
 **Data:**
 ```javascript
 const phases = [
+  { id: "sunrise-reset", name: "Sunrise Reset", color: "#87CEEB" },
   { id: "warmup", name: "Warm-up", color: "#FFA500" },
-  { id: "pool-party", name: "Pool Party", color: "#FFD700" },
   { id: "festival-brunch", name: "Festival Brunch", color: "#FF8C00" },
+  { id: "pool-party", name: "Pool Party", color: "#FFD700" },
   { id: "post-game", name: "Post-game", color: "#FF6347" },
-  { id: "sunrise-reset", name: "Sunrise Reset", color: "#87CEEB" }
+  { id: "club", name: "Club", color: "#2D2D2D" },
+  { id: "late-night-warehouse", name: "Late Night Warehouse", color: "#1A1A1A" }
 ];
 ```
 

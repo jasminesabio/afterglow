@@ -47,14 +47,16 @@
 
 ## 4. Tagging System
 
-✓ **Three dimensions, nine tags total (locked in)**
+✓ **Three dimensions (locked in)**
 
-### Time/Setting (pick 1–2, usually 1)
-- Warm-up
-- Pool Party ← MVP focus
-- Festival Brunch
-- Post-game
+### Time/Setting (pick 1, usually)
 - Sunrise Reset
+- Warm-up
+- Festival Brunch
+- Pool Party ← MVP focus
+- Post-game
+- Club
+- Late Night Warehouse
 
 ### Journey Role (pick 1)
 - Opener
@@ -67,7 +69,7 @@
 - Lock-in
 - Wanderers
 
-**No custom tags in MVP.** These nine are sufficient. Post-hackathon: explore user customization.
+**MVP scope:** Pool Party constellation only. Other time/settings available for future phases. **No custom tags.** These tags are sufficient. Post-hackathon: explore user customization.
 
 ---
 
