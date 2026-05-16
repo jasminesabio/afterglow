@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afterglow Tagging</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8f7f5;
+            color: #1a1a1a;
+            min-height: 100vh;
+            padding: 12px 15px;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container.uploading {
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e0ddd8;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 3px;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.82em;
+        }
+
+        /* Upload */
+        .upload-section {
+            background: #fff;
+            border: 2px solid #d8d3cc;
+            border-radius: 4px;
+            padding: 18px 15px;
+            text-align: center;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .upload-section:hover {
+            border-color: #1a1a1a;
+            background: #fafaf8;
+        }
+
+        #csvInput {
+            display: none !important;
+        }
+
+        .upload-icon {
+            font-size: 1.65em;
+            margin-bottom: 6px;
+        }
+
+        .upload-text {
+            font-size: 1.05em;
+            margin-bottom: 3px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* Tagging Section */
+        .tagging-section {
+            display: none;
+        }
+
+        .tagging-section.active {
+            display: block;
+        }
+
+        .track-header {
+            background: #fff;
+            border: 1px solid #d8d3cc;
+            border-left: 3px solid #1a1a1a;
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 3px;
+        }
+
+        .track-title {
+            font-size: 1.05em;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .track-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.77em;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            gap: 5px;
+        }
+
+        .meta-label {
+            font-weight: 500;
+        }
+
+        /* Progress */
+        .progress-container {
+            margin-bottom: 8px;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+            font-size: 0.77em;
+            color: #888;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 3px;
+            background: #e0ddd8;
+            border-radius: 1px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+
+        /* Tag Group */
+        .tag-group {
+            margin-bottom: 8px;
+            background: #fff;
+            border: 1px solid #d8d3cc;
+            border-radius: 3px;
+            padding: 7px;
+        }
+
+        .tag-group-title {
+            font-size: 0.715em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 6px;
+            color: #1a1a1a;
+        }
+
+        .tag-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 7px;
+        }
+
+        .tag-option-btn {
+            background: #f8f7f5;
+            border: 1px solid #d8d3cc;
+            border-radius: 2px;
+            padding: 5px 9px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.77em;
+            font-weight: 500;
+        }
+
+        .tag-option-btn:hover {
+            border-color: #1a1a1a;
+            background: #fff;
+        }
+
+        .tag-option-btn.selected {
+            background: #1a1a1a;
+            color: #fff;
+            border-color: #1a1a1a;
+        }
+
+        /* Selected Tags */
+        .selected-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .selected-tag {
+            background: #f8f7f5;
+            border: 1px solid #d8d3cc;
+            border-radius: 2px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.88em;
+        }
+
+        .selected-tag-name {
+            font-weight: 500;
+            min-width: 75px;
+            font-size: 0.88em;
+        }
+
+        .tag-slider-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex: 1;
+        }
+
+        .tag-slider {
+            flex: 1;
+            height: 8px;
+            border-radius: 4px;
+            background: #e0ddd8;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .tag-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            cursor: grab;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag-slider::-webkit-slider-thumb:active {
+            cursor: grabbing;
+        }
+
+        .tag-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            cursor: grab;
+            border: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag-slider::-moz-range-thumb:active {
+            cursor: grabbing;
+        }
+
+        .tag-confidence-input {
+            width: 42px;
+            padding: 4px 5px;
+            border: 1px solid #d8d3cc;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.825em;
+            text-align: center;
+            cursor: text;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tag-confidence-input:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            background: #fafaf8;
+        }
+
+        .tag-remove {
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-size: 1.1em;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .tag-remove:hover {
+            color: #1a1a1a;
+        }
+
+        .empty-state {
+            color: #888;
+            font-size: 0.75em;
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: space-between;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 0.825em;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: #1a1a1a;
+            border: 1px solid #d8d3cc;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #fafaf8;
+            border-color: #1a1a1a;
+        }
+
+        .btn-secondary:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid #1a1a1a;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #333;
+        }
+
+        /* Completion */
+        .completion-screen {
+            display: none;
+            text-align: center;
+            padding: 15px 15px;
+        }
+
+        .completion-screen.active {
+            display: block;
+        }
+
+        .completion-icon {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .completion-title {
+            font-size: 1.43em;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .completion-text {
+            color: #666;
+            font-size: 0.88em;
+            margin-bottom: 15px;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Afterglow Tagging</h1>
+            <p class="subtitle">Tag each track with Setting, Journey, and Crowd. Pick multiple options per category.</p>
+        </header>
+
+        <!-- Upload -->
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-icon">📤</div>
+            <div class="upload-text">Upload your tracks (CSV)</div>
+            <div class="upload-hint" style="color: #888; font-size: 0.95em;">Artist, Title, Duration, Key, BPM</div>
+        </div>
+        <input type="file" id="csvInput" accept=".csv" />
+
+        <!-- Tagging -->
+        <div class="tagging-section" id="taggingSection">
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span id="progressText">0 of 0</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Track Header -->
+            <div class="track-header">
+                <div class="track-title" id="trackTitle"></div>
+                <div class="track-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration:</span>
+                        <span id="trackDuration"></span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Key:</span>
+                        <span id="trackKey"></span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">BPM:</span>
+                        <span id="trackBPM"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setting Tags -->
+            <div class="tag-group">
+                <div class="tag-group-title">Setting</div>
+                <div class="tag-options" id="settingOptions"></div>
+                <div class="selected-tags" id="settingTags"></div>
+            </div>
+
+            <!-- Journey Tags -->
+            <div class="tag-group">
+                <div class="tag-group-title">Journey</div>
+                <div class="tag-options" id="journeyOptions"></div>
+                <div class="selected-tags" id="journeyTags"></div>
+            </div>
+
+            <!-- Crowd Tags -->
+            <div class="tag-group">
+                <div class="tag-group-title">Crowd</div>
+                <div class="tag-options" id="crowdOptions"></div>
+                <div class="selected-tags" id="crowdTags"></div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="nav-buttons">
+                <button class="btn-secondary" id="prevBtn" disabled>← Previous</button>
+                <button class="btn-primary" id="nextBtn">Next →</button>
+            </div>
+        </div>
+
+        <!-- Completion -->
+        <div class="completion-screen" id="completionScreen">
+            <div class="completion-icon">✨</div>
+            <div class="completion-title">All Tracks Tagged!</div>
+            <div class="completion-text" id="completionStats"></div>
+            <div class="export-buttons">
+                <button class="btn-primary" id="downloadJsonBtn">Download JSON</button>
+                <button class="btn-secondary" id="copyJsonBtn">Copy JSON to Clipboard</button>
+            </div>
+            <button class="btn-secondary" id="restartBtn" style="margin-top: 20px;">Start Over</button>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let tracks = [];
+        let currentIndex = 0;
+        let tagging = {}; // tagging[i] = { setting: [], journey: [], crowd: [] }
+
+        const TAG_OPTIONS = {
+            setting: ['Afterglow', 'Sunrise Reset', 'Warm-up', 'Festival Brunch', 'Pool Party', 'Club', 'Late Night Warehouse'],
+            journey: ['Opener', 'Bridge', 'Reset', 'Home Stretch'],
+            crowd: ['Arrivals', 'Lock-in', 'Wanderers']
+        };
+
+        // DOM
+        const uploadSection = document.getElementById('uploadSection');
+        const taggingSection = document.getElementById('taggingSection');
+        const completionScreen = document.getElementById('completionScreen');
+        const csvInput = document.getElementById('csvInput');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const downloadJsonBtn = document.getElementById('downloadJsonBtn');
+        const copyJsonBtn = document.getElementById('copyJsonBtn');
+        const restartBtn = document.getElementById('restartBtn');
+
+        // CSV Parser
+        function parseCSV(text) {
+            const lines = text.trim().split('\n');
+            const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+
+            return lines.slice(1).map(line => {
+                const values = line.split(',').map(v => v.trim());
+                const obj = {};
+                headers.forEach((header, i) => {
+                    obj[header] = values[i] || '';
+                });
+                return obj;
+            }).filter(obj => obj.artist && obj.title);
+        }
+
+        // Center the upload section initially
+        document.querySelector('.container').classList.add('uploading');
+
+        // Upload handler
+        uploadSection.addEventListener('click', () => {
+            csvInput.click();
+        });
+
+        csvInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                tracks = parseCSV(event.target.result);
+
+                if (tracks.length === 0) {
+                    alert('No valid tracks found');
+                    return;
+                }
+
+                // Initialize tagging
+                tagging = {};
+                tracks.forEach((_, i) => {
+                    tagging[i] = { setting: [], journey: [], crowd: [] };
+                });
+
+                currentIndex = 0;
+                uploadSection.style.display = 'none';
+                taggingSection.classList.add('active');
+                document.querySelector('.container').classList.remove('uploading');
+                renderTrack();
+            };
+            reader.readAsText(file);
+        });
+
+        function renderTrack() {
+            const track = tracks[currentIndex];
+            const tags = tagging[currentIndex];
+
+            // Track info
+            document.getElementById('trackTitle').textContent = `${track.artist} - ${track.title}`;
+            document.getElementById('trackDuration').textContent = track.duration || 'N/A';
+            document.getElementById('trackKey').textContent = track.key || 'N/A';
+            document.getElementById('trackBPM').textContent = track.bpm || 'N/A';
+
+            // Render tag groups
+            renderTagGroup('setting', tags.setting);
+            renderTagGroup('journey', tags.journey);
+            renderTagGroup('crowd', tags.crowd);
+
+            updateProgress();
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.textContent = currentIndex === tracks.length - 1 ? 'Finish' : 'Next →';
+        }
+
+        function renderTagGroup(dimension, selectedTags) {
+            const optionsContainer = document.getElementById(dimension + 'Options');
+            const selectedContainer = document.getElementById(dimension + 'Tags');
+
+            // Get list of selected tag names
+            const selectedNames = selectedTags.map(t => t.value);
+
+            // Available options
+            optionsContainer.innerHTML = TAG_OPTIONS[dimension].map(tag => `
+                <button class="tag-option-btn ${selectedNames.includes(tag) ? 'selected' : ''}" data-dimension="${dimension}" data-tag="${tag}">
+                    ${tag}
+                </button>
+            `).join('');
+
+            // Attach click listeners
+            optionsContainer.querySelectorAll('.tag-option-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tagName = btn.dataset.tag;
+                    const dim = btn.dataset.dimension;
+
+                    // Check if already selected
+                    const existing = tagging[currentIndex][dim].find(t => t.value === tagName);
+                    if (!existing) {
+                        tagging[currentIndex][dim].push({ value: tagName, confidence: 8 });
+                        renderTrack();
+                    }
+                });
+            });
+
+            // Selected tags
+            if (selectedTags.length === 0) {
+                selectedContainer.innerHTML = '<div class="empty-state">No tags selected</div>';
+            } else {
+                selectedContainer.innerHTML = selectedTags.map((tag, idx) => `
+                    <div class="selected-tag">
+                        <div class="selected-tag-name">${tag.value}</div>
+                        <div class="tag-slider-wrapper">
+                            <input type="range" class="tag-slider" data-dimension="${dimension}" data-index="${idx}" min="1" max="10" value="${tag.confidence}" />
+                            <input type="number" class="tag-confidence-input" data-dimension="${dimension}" data-index="${idx}" min="1" max="10" value="${tag.confidence}" />
+                        </div>
+                        <button class="tag-remove" data-dimension="${dimension}" data-index="${idx}">✕</button>
+                    </div>
+                `).join('');
+
+                // Slider listeners - update input when slider moves
+                selectedContainer.querySelectorAll('.tag-slider').forEach(slider => {
+                    slider.addEventListener('input', (e) => {
+                        const dim = e.target.dataset.dimension;
+                        const idx = parseInt(e.target.dataset.index);
+                        const newValue = parseInt(e.target.value);
+
+                        tagging[currentIndex][dim][idx].confidence = newValue;
+
+                        // Update input field
+                        const input = selectedContainer.querySelector(`.tag-confidence-input[data-dimension="${dim}"][data-index="${idx}"]`);
+                        if (input) input.value = newValue;
+                    });
+                });
+
+                // Number input listeners - update slider when input changes
+                selectedContainer.querySelectorAll('.tag-confidence-input').forEach(input => {
+                    input.addEventListener('input', (e) => {
+                        let value = parseInt(e.target.value);
+                        if (isNaN(value)) value = 8;
+                        if (value < 1) value = 1;
+                        if (value > 10) value = 10;
+
+                        e.target.value = value;
+
+                        const dim = e.target.dataset.dimension;
+                        const idx = parseInt(e.target.dataset.index);
+
+                        tagging[currentIndex][dim][idx].confidence = value;
+
+                        // Update slider
+                        const slider = selectedContainer.querySelector(`.tag-slider[data-dimension="${dim}"][data-index="${idx}"]`);
+                        if (slider) slider.value = value;
+                    });
+                });
+
+                // Remove listeners
+                selectedContainer.querySelectorAll('.tag-remove').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const dim = e.target.dataset.dimension;
+                        const idx = parseInt(e.target.dataset.index);
+                        tagging[currentIndex][dim].splice(idx, 1);
+                        renderTrack();
+                    });
+                });
+            }
+        }
+
+        function updateProgress() {
+            const total = tracks.length;
+            const tagged = Object.keys(tagging).filter(i => {
+                const t = tagging[i];
+                return t.setting.length > 0 || t.journey.length > 0 || t.crowd.length > 0;
+            }).length;
+            const percent = Math.round((tagged / total) * 100);
+
+            document.getElementById('progressText').textContent = `${tagged} of ${total}`;
+            document.getElementById('progressPercent').textContent = `${percent}%`;
+            document.getElementById('progressFill').style.width = `${percent}%`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderTrack();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < tracks.length - 1) {
+                currentIndex++;
+                renderTrack();
+            } else {
+                showCompletion();
+            }
+        });
+
+        function generateJSON() {
+            return JSON.stringify(tracks.map((track, i) => ({
+                ...track,
+                tags: {
+                    setting: tagging[i].setting,
+                    journey: tagging[i].journey,
+                    crowd: tagging[i].crowd
+                }
+            })), null, 2);
+        }
+
+        downloadJsonBtn.addEventListener('click', () => {
+            const json = generateJSON();
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'tracks-tagged.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        copyJsonBtn.addEventListener('click', () => {
+            const json = generateJSON();
+            navigator.clipboard.writeText(json).then(() => {
+                copyJsonBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyJsonBtn.textContent = 'Copy JSON to Clipboard';
+                }, 2000);
+            });
+        });
+
+        restartBtn.addEventListener('click', () => {
+            tracks = [];
+            currentIndex = 0;
+            tagging = {};
+            csvInput.value = '';
+            uploadSection.style.display = 'block';
+            taggingSection.classList.remove('active');
+            completionScreen.classList.remove('active');
+            document.querySelector('.container').classList.add('uploading');
+        });
+
+        function showCompletion() {
+            const total = tracks.length;
+            document.getElementById('completionStats').textContent = `${total} tracks tagged and ready to import.`;
+            taggingSection.classList.remove('active');
+            completionScreen.classList.add('active');
+        }
+    </script>
+</body>
+</html>
