@@ -10,9 +10,11 @@ Organize your library by timeline of day + performance contexts (who's here? wha
 
 ## The Problem (Real and Specific)
 
-DJs often get spontaneous gigs: "Can you play a pool party in 2 hours?" or "We need someone for festival brunch." Current library organization (genre folders, BPM sorting) doesn't match the actual decision-making process: "When would I play this? Why? What's the crowd state?"
+DJs at multi-day events (Burning Man, festivals) need to be ready for *anything*: scheduled gigs at predictable times, but also spontaneous moments—4 AM dance floor, sunrise wind-down, unexpected camp requests.
 
-This mismatch is painful for emerging DJs who feel blocked by their own library.
+Current library organization (genre folders, BPM sorting) doesn't match the actual decision-making process: "When would I play this? Why? What's the crowd state?"
+
+This mismatch is especially painful when you're uncertain: you need to feel ready, but folder browsing is slow and discovery is nonexistent.
 
 ---
 
@@ -29,8 +31,9 @@ This mismatch is painful for emerging DJs who feel blocked by their own library.
 
 ## The Value
 
-- **For DJs:** Prep a spontaneous gig in 10 minutes instead of 30+. Rediscover forgotten material. Feel confident.
-- **For the concept:** Organize libraries by DJ thinking, not traditional metadata categories.
+- **For DJs:** Be ready for *anything*. Prep a spontaneous gig in 10 minutes. Rediscover material you'd forgotten. Feel confident across uncertainty.
+- **For multi-day events:** Navigate both scheduled gigs AND spontaneous moments with the same library.
+- **For the concept:** Organize libraries by *how DJs actually think*, not traditional metadata categories.
 
 ---
 

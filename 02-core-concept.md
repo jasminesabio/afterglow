@@ -1,16 +1,18 @@
 # The Three-Layer Model: How Afterglow Works
 
+**Context:** You're at a multi-day event (Burning Man, festival) with both scheduled and spontaneous gigs. You need to be ready for *anything*.
+
 ---
 
 ## Layer 1: Timeline View (Choose Your Context)
 
-**What it shows:** Five time-of-day phases
+**What it shows:** Five time-of-day phases representing different event moments
 
 ```
-Warm-up  |  Pool Party  |  Festival Brunch  |  Post-game  |  Sunrise Reset
+Sunrise Reset  |  Warm-up  |  Festival Brunch  |  Pool Party  |  Post-game  |  Late Night
 ```
 
-**Why these five?**
+**Why these phases?**
 These represent the real DJ scenarios people face:
 - **Warm-up:** Early, setting the vibe (6–9 pm)
 - **Pool Party:** Peak fun, uplifting (4–7 pm)

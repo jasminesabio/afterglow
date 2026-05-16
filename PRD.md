@@ -22,11 +22,12 @@
 ### The Real Problem
 DJs organize their libraries with technical metadata (genre, BPM, key) because that's what existing tools support. But when actually preparing to perform, DJs navigate by emotional and situational logic: **When would I play this? Why? What's the crowd state?**
 
-This mismatch is especially painful for **emerging and casual DJs in spontaneous scenarios**:
-- Asked to play a house party with 2 hours notice
-- Booked for a festival brunch with unknown timing
-- Playing a Burning Man camp at unpredictable hours
-- Last-minute event bookings where setup is uncertain
+This mismatch is especially painful for **DJs in uncertain, spontaneous scenarios**:
+- Multi-day events (Burning Man, festivals) with both scheduled gigs AND spontaneous moments
+- Asked to play a camp at 4 AM when you weren't expecting it
+- Booked for a brunch but might get pulled to play sunrise wind-down instead
+- Last-minute gigs where you don't know the exact context until you arrive
+- Events where you need to be ready for *anything* across multiple times of day
 
 **Current friction:**
 - Great tracks get lost because they don't fit folder structures
@@ -83,40 +84,45 @@ Anyone preparing for **uncertain performance scenarios** (unknown timing, unknow
 
 ## 5. User Stories (MVP Scope)
 
-### Story 1: Quick Prep for a Spontaneous Gig
-**As a** DJ who just got texted about a pool party in 2 hours  
-**I want to** see what I have for "Pool Party" context all at once  
-**So that** I can find material fast without scrolling through 50 track names
+### Primary Story: Be Ready for Spontaneity
+**As a** DJ at a multi-day event (e.g., Burning Man) where I might get asked to play unexpectedly  
+**I want to** quickly access organized tracks for any scenario (sunrise wind-down, 4 AM dance floor, brunch vibes, etc.)  
+**So that** I can say yes to spontaneous gigs without scrambling and feel confident across uncertainty
 
 **Acceptance Criteria:**
-- Open Pool Party phase
-- See all Pool Party tracks organized by zone (Arrivals, Lock-in, Wanderers)
-- Scan in <2 minutes
-- Find 3+ usable tracks
+- Timeline view shows multiple day/night contexts I can navigate to instantly
+- For any context, I can scan available tracks in <2 minutes
+- I can understand why each track is positioned where it is (see its tags and role)
+- No friction: I don't scroll through hundreds of tracks to find what fits a moment
+- I feel genuinely ready to play *anything* at *any time*
+
+**Real-world example:** I'm at Burning Man with scheduled gigs but might get asked to DJ a sunrise wind-down or a 4 AM dance floor. I open Sunrise Reset or Late Night, I see exactly what I have, and I can say yes immediately.
 
 ---
 
-### Story 2: Understand Why a Track Belongs Somewhere
+### Secondary Story: Rediscover Forgotten Material in Context
+**As a** DJ prepping for any gig (scheduled or spontaneous)  
+**I want to** find tracks I haven't played in months that fit the specific context I need  
+**So that** I have fresh material, feel more creative, and rediscover gems I'd totally forgotten
+
+**Acceptance Criteria:**
+- Underplayed tracks (play count < 5) are visually marked in the constellation
+- Underplayed tracks appear in their relevant contexts, not hidden away
+- The rediscovery feels genuine ("Wait, this is perfect and I hadn't thought about it")
+- I discover 3–5 tracks per context that I'd forgotten but would actually play
+
+---
+
+### Supporting Story: Understand the Logic Behind Track Placement
 **As a** DJ browsing the constellation  
 **I want to** click a track and see why it's positioned in this zone  
-**So that** I understand the system's logic and trust the organization
+**So that** I understand the system's logic and trust the organization (instead of feeling like a black box)
 
 **Acceptance Criteria:**
 - Click track → detail view shows artist, duration, tags
-- Tags explain: When? Why? What crowd?
-- Can see play count + underplayed flag
-
----
-
-### Story 3: Rediscover Forgotten Material
-**As a** DJ prepping a gig  
-**I want to** find tracks I haven't played in months  
-**So that** I have fresh material and feel more confident
-
-**Acceptance Criteria:**
-- Underplayed tracks are marked (play count < 5)
-- Underplayed tracks appear in relevant zones
-- Visual signal makes rediscovery obvious
+- Tags clearly explain: When (Time/Setting)? Why (Journey Role)? What crowd (Crowd State)?
+- Can see play count so I know if this is underplayed
+- The tags directly justify the position
 
 ---
 
@@ -258,18 +264,26 @@ Anyone preparing for **uncertain performance scenarios** (unknown timing, unknow
 ## 12. Demo Narrative (High-Level)
 
 ### 30-Second Hook
-DJ gets asked to play pool party with 2 hours notice. Opens Afterglow instead of drowning in metadata. Different approach. Same goal: confidence.
+You're at Burning Man. You have scheduled gigs, but you might get asked to play a sunrise wind-down or a 4 AM dance floor. You need to be ready for *anything*. Afterglow lets you organize your library by context so you're always prepared—no scrambling, no "I don't know what I have."
 
 ### 60-Second Full Story
-Problem (metadata mismatch) → Insight (DJs navigate by context) → Solution (organize by when/why/crowd) → Benefit (faster prep, rediscovery, confidence).
+**Problem:** DJs prepare by browsing metadata (genre, BPM). But that's not how you actually think when prepping a gig. You think: When would I play this? Why? What crowd?
+
+**Insight:** If we organize your library by *how you actually navigate it* (context, role, crowd state), you're ready faster and you rediscover material you'd forgotten.
+
+**Solution:** Three-layer model: Timeline (choose your context) → Constellation (spatial map of your library by performance dimensions) → Track details (see why each track belongs).
+
+**Benefit:** You're ready for spontaneous moments. You prep in 10 minutes instead of 30. You feel confident across uncertainty.
 
 ### 5–7 Minute Walkthrough
-1. Open Pool Party phase (30 sec)
-2. Show constellation with three zones (90 sec)
-3. Explain spatial logic (60 sec)
-4. Find + click rediscovery track (60 sec)
-5. Show the arc (Arrivals → Lock-in → Wanderers) (45 sec)
-6. Close with confidence moment (30 sec)
+1. **Setup:** "I'm at Burning Man. I have a scheduled evening set, but I might get asked to play sunrise or 4 AM." (30 sec)
+2. **Open Timeline:** Show five contexts (Sunrise Reset, Daytime, Pool Party, Evening, Late Night) (30 sec)
+3. **Select Sunrise Reset:** Constellation loads with your sunrise tracks organized by zones (Arrivals, Lock-in, Wanderers) (60 sec)
+4. **Explain the logic:** X-axis = Journey Role (Opener → Home Stretch), Y-axis = Crowd State. Why this matters. (60 sec)
+5. **Hover interaction:** Show nearby tracks responding, revealing relationships (30 sec)
+6. **Find the hero track:** Click on an underplayed track (play count < 5), see why it belongs (Bridge, Lock-in) (60 sec)
+7. **The moment:** "This is perfect. I haven't played it in 6 months but it's exactly what I need for sunrise." (30 sec)
+8. **Close:** "That's Afterglow. Be ready for anything." (15 sec)
 
 ---
 

@@ -17,22 +17,29 @@ This mismatch is especially painful for **emerging and casual DJs in spontaneous
 
 ## The Friction Points
 
-### Scenario 1: The Last-Minute Booking
-You get texted: "Can you DJ our pool party Saturday at 4 pm? 2-hour notice."
+### Scenario 1: The Multi-Day Event Uncertainty (Burning Man, Festivals)
+You're at Burning Man with scheduled gigs, but it's unpredictable. You might get asked to:
+- Play a sunrise wind-down at 6 AM (wasn't planned)
+- DJ a 4 AM dance floor (spontaneous request)
+- Cover someone's brunch slot last-minute
+- Play a camp you weren't expecting
+
+You need to feel *ready for anything*, but you don't know exactly what context you'll need.
 
 **Current reality:**
-- Open your library
+- "I need sunrise material. Let me search my hard drive..."
 - Browse folders: "House," "Deep House," "Funk," "World"
-- Pick a few tracks from each folder
-- Pray it works
-- Spend 20+ minutes navigating metadata
+- Scroll through 200+ house tracks looking for ones that feel "sunrise"
+- Do I have enough ambient stuff? Groovy stuff? Opener energy?
+- Spend 30+ minutes in a panic
+- Wonder: "Do I actually have good material for this context?"
 
 **What you're actually thinking:**
-- "It's 4 pm. People are arriving. I need openers. What do I have that's uplifting but not too intense?"
-- "Later, people will be more comfortable. What bridges into deeper grooves?"
-- "Some people will wander away. What tracks work for smaller listening groups?"
+- "It's 6 AM. People are tired but listening. I need something uplifting but not jarring. What openers do I have for this vibe?"
+- "If I get asked for a 4 AM set, what do I have that's deep but danceable?"
+- "For different times of day, what's my strongest material? Where are the gaps?"
 
-You're navigating by **context and moment**, not by folder structure.
+You're navigating by **context and moment**, not by folder structure. But your tools force you to use metadata.
 
 ### Scenario 2: The Forgotten Track
 You have thousands of tracks. Great ones get lost because:
@@ -115,19 +122,28 @@ They think: "I need something for 4 pm when people are arriving. It's got to be 
 
 ## Success Looks Like
 
-A DJ who just got asked to play a pool party:
-1. Opens Afterglow
-2. Clicks "Pool Party"
-3. Sees all their Pool Party tracks in three zones (Arrivals, Lock-in, Wanderers)
-4. Scans in 2 minutes
-5. Finds 3–5 solid tracks
-6. Discovers a forgotten track that's perfect
-7. Feels confident
-8. Takes the gig
+A DJ at Burning Man who might get asked to play anything:
+1. Gets asked: "Can you play sunrise wind-down tomorrow at 6 AM?"
+2. Opens Afterglow (on their laptop in their tent)
+3. Clicks "Sunrise Reset"
+4. Sees all their sunrise material organized by zones (Arrivals, Lock-in, Wanderers)
+5. Scans in 2 minutes, understands why each track is positioned where it is
+6. Finds 3–5 solid tracks
+7. Discovers a forgotten deep cut that's *perfect* for the context
+8. Says "yes" with confidence
+9. Plays the set feeling prepared
 
-**Time saved:** 20+ minutes  
-**Confidence gained:** Visible  
-**Rediscovery moment:** Real and meaningful
+**Alternative:**
+1. Gets surprised 4 AM request
+2. Opens Afterglow
+3. Clicks "Late Night"
+4. Instantly knows what they have, no scrambling
+5. Says yes, plays, kills it
+
+**Time saved:** 20+ minutes of panic  
+**Confidence gained:** Genuine, across uncertainty  
+**Rediscovery moment:** Real and meaningful  
+**Life changed:** You go from "I don't know if I have material for this" to "I'm ready for anything"
 
 ---
 
