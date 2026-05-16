@@ -95,15 +95,17 @@ Afterglow/
 
 ## 🎵 Demo Script (Shorter Version)
 
-**Setup** (20 sec): "I'm prepping an Afterglow set. My 70 tracks are organized by genre/BPM."
+**Setup** (20 sec): "I'm heading to a festival. Could play Afterglow, sunrise, late-night, or daytime. I need multiple vibes prepped—but building separate playlists takes hours."
 
-**Problem** (30 sec): "But when I'm actually DJing, I don't navigate by BPM. I navigate by role and crowd state. Bridge moments. Lock-in energy. Lingering spaces. Great tracks get lost in metadata folders."
+**Problem** (30 sec): "Current tools force you to organize by metadata—genre, BPM. But when you're actually DJing a moment, you think differently: Bridge moments, crowd lock-in, lingering spaces. Great tracks get invisible because they don't fit the metadata you're browsing."
 
-**Solution** (60 sec): "Afterglow shows the same 70 tracks organized by how I actually think. X-axis = Journey Role (Opener to Home Stretch). Y-axis = Crowd State (Arrivals to Wanderers). Hover to see relationships. Click to see why each track belongs."
+**Solution** (60 sec): "Afterglow shows your library organized by how you actually navigate. For Afterglow, X-axis = Journey Role (Opener to Home Stretch). Y-axis = Crowd State (Arrivals to Wanderers). See all 70 tracks at once. Hover to see relationships. Click to understand why each track belongs."
 
-**Hero moment** (60 sec): [Click on a well-positioned track] "Look—this track is positioned as a Bridge moment with a focused crowd. That's exactly what I need right now. And I found it in 15 seconds by scanning the constellation, not scrolling a list."
+**Hero moment** (60 sec): [Click on a well-positioned track] "Look—this track is positioned as a Bridge moment with a focused crowd. That's exactly what Afterglow needs right here. I found it in 15 seconds by scanning spatially, not scrolling lists."
 
-**Close** (15 sec): "That's Afterglow. See your library clearly. Organize by DJ decision-making, not metadata."
+**Multi-vibe ready** (20 sec): [Flip to Sunrise Reset] "And if I get sunrise instead of Afterglow? Same navigation. Different context. I'm prepped for either moment."
+
+**Close** (15 sec): "That's Afterglow. Prep multiple vibes in minutes. Navigate each one by DJ decision-making, not metadata. Arrive ready."
 
 ---
 

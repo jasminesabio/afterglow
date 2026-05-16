@@ -20,11 +20,11 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 ### 30-Second Script
 
-> "I'm a DJ, and my library of 70 Afterglow tracks is organized by genre and BPM. But when I'm prepping a set, I navigate differently: *What role does this track play? Does it bridge moments or work with a wandering crowd?* Great tracks get lost in folders because metadata doesn't capture that.
+> "I'm a DJ, and I play multi-day festivals where I don't know which vibe I'll DJ until I arrive. I could play Afterglow, sunrise, late-night, or daytime. I need to arrive prepared with multiple playlists on a USB—but building them takes hours.
 >
-> **Afterglow flips that.** Instead of lists organized by metadata, we organize by *how you actually navigate*—spatially, by role and crowd state. Same 70 tracks, visible in minutes.
+> **Afterglow flips that.** Instead of spending hours on separate playlists, I see my entire library organized into vibes. Within each vibe, I navigate by *how I actually think*—role and crowd state, not genre and BPM. Same tracks, completely different prep workflow.
 >
-> The result: you prep faster, rediscover forgotten gems, and feel *confident* in your selections. You see relationships in your library you'd never find in a list."
+> The result: I prep 3–4 vibes in 15 minutes instead of hours. I arrive confident. I can say yes to any moment."
 
 **Timing:** ~30 seconds at natural conversational pace.
 
@@ -50,15 +50,15 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 ### 60-Second Script
 
-> "Most DJ tools organize music by technical metadata—genre, BPM, key. But when a DJ is actually prepping a set, that's not how you think. You think: *What role does this track play? Bridge moments? Lock-in? Lingering?*
+> "Most DJ tools force you to build separate playlists for each scenario—Afterglow, sunrise, late-night, daytime—which takes hours. And within each playlist, you navigate by genre and BPM, not by how you actually think.
 >
-> Here's the gap: Your 70-track Afterglow collection is great, but 80% of your library is invisible. You scroll through lists organized by genre, see the same 20 tracks, and forget about the rest. Great tracks are buried because they don't fit neatly into metadata folders.
+> Here's the real problem: At a festival, you don't know which moment you'll DJ until you arrive. You need to be ready for *anything*—but preparation takes too long.
 >
-> When you browse by *how you actually navigate*—role and crowd state—everything becomes visible instantly. You're not scrolling; you're exploring a spatial map of your own library.
+> When you browse by *how you actually navigate*—role and crowd state instead of genre/BPM—within each vibe, everything becomes clear instantly. You're not scrolling lists; you're exploring a map of your own music organized by context.
 >
-> **Afterglow** organizes your tracks by performance contexts instead of metadata. Same 70 tracks, radically different view. You prep in 15 minutes instead of 45. You rediscover forgotten gems. You feel confident in your selections.
+> **Afterglow** organizes your library into vibes, and within each vibe, by performance contexts. Same tracks, radically different prep workflow. You arrive at a festival with Afterglow, Sunrise Reset, Club, and Pool vibes organized and ready. You can say yes to unexpected opportunities. You feel genuinely prepared.
 >
-> That's the power of organizing by DJ decision-making, not algorithms or genres."
+> That's what happens when you organize by DJ decision-making, not metadata alone."
 
 **Timing:** ~60 seconds at natural pace.
 
@@ -86,15 +86,15 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 - The main hackathon pitch (judges have 5–10 minutes per project)
 - Close-up demos at your booth
 
-**Your goal:** Walk judges through the three-layer model, tell the Afterglow story, land the rediscovery moment. Emphasize *you* making decisions, *your* library, *your* artistry—not automation.
+**Your goal:** Show judges how to prep multiple vibes for uncertain festival scenarios in minutes. Emphasize spatial navigation across contexts, multi-vibe readiness, and DJ agency throughout.
 
 **Timing breakdown:**
-- Opening hook (20 sec)
-- Problem setup (40 sec)
-- Timeline + Constellation intro (1 min)
-- Spatial logic walkthrough (1.5–2 min)
-- Rediscovery moment (1–1.5 min)
-- Wrap-up + value prop (30 sec)
+- Opening hook (30 sec) — Festival scenario, multi-vibe uncertainty
+- Timeline + Constellation intro (30 sec) — Show 7 contexts, click Afterglow
+- Spatial logic walkthrough (2.5–3 min) — Explain three zones, spatial relationships
+- Clarity moment (1–1.5 min) — Click a track, show why it belongs, tags
+- Multi-vibe readiness (45 sec) — Flip to Sunrise Reset, show preparedness
+- Close (30 sec) — Festival-ready summary
 
 ---
 
@@ -104,17 +104,17 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 **[Stand ready, laptop / screen visible. Friendly, conversational. Make eye contact.]**
 
-> "Okay, so picture this. Your friend texts you: 'Can you DJ our pool party at 4 pm? We'll have maybe 20 people.' You have a couple hours to prep.
+> "Okay, so picture this. You're heading to a multi-day festival next weekend. You could get booked for Afterglow—that late-night, reflective moment. Or sunrise wind-down. Or you might get pulled into the late-night warehouse stage. You don't know until you arrive.
 >
-> Most people open Spotify or start scrolling through folders and feel overwhelmed. You don't know what you have. You dig through your library. The energy doesn't quite match. You're stressed.
+> You need to prep 3–4 different vibes on a USB—different energy, different pace, different moment. Most people open Spotify and start building playlists. It takes hours. You're stressed.
 >
-> **Afterglow** is designed for exactly this moment. Let me show you how it helps you organize and discover your own material."
+> **Afterglow** is designed for exactly this moment. Let me show you how to see all your prepared vibes at once, and navigate each one."
 
-**[Brief, engaging, sets up the relatable scenario.]**
+**[Brief, engaging, sets up the real uncertainty DJs face.]**
 
 **Judge resonance:**
-- **Richie:** Personal, authentic
-- **Romain:** Real workflow problem
+- **Richie:** Personal, authentic—respects real DJ scenarios
+- **Romain:** Multi-scenario prep challenge
 - **Michele:** Human-centered problem statement
 
 ---
@@ -123,18 +123,18 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 **[Point to the screen. Open Afterglow. Timeline view should be visible.]**
 
-> "You open Afterglow. The first thing you see is a timeline of the day—different contexts where you might play.
+> "You open Afterglow. The first thing you see is a timeline—all the different moments you might need to DJ.
 >
-> Warm-up, Pool Party, Festival Brunch, Afterglow, Sunrise Reset.
+> Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Afterglow, Club, Late Night Warehouse.
 >
-> For your gig, you say: 'I'm playing 4 pm. Pool Party.' You click on it."
+> You're most likely to get Afterglow or Sunrise, so you say: 'Let me see what I have for Afterglow first.' You click on it."
 
-**[Click on Pool Party. Constellation view loads. Pause for 2 seconds so judges can take in what they're seeing.]**
+**[Click on Afterglow. Constellation view loads. Pause for 2 seconds so judges can take in what they're seeing.]**
 
 **What judges should see:**
 - Three visible zones with labels (Arrivals, Lock-in, Wanderers)
-- Tracks clustered spatially
-- Underplayed signal visible on some tracks
+- 70 tracks clustered spatially
+- Clear spatial relationships showing different crowd states and journey roles
 
 ---
 
@@ -142,25 +142,25 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 **[Stand back slightly. Give judges time to look at the spatial arrangement.]**
 
-> "Now you see something different. Not a list. A map—a spatial arrangement of your **own library** organized around how you actually use it.
+> "Now you see something different. Not a list. A map—a spatial arrangement of your **own library for this specific moment** (Afterglow), organized around how you actually navigate when you DJ.
 >
 > You can see **three zones here**:
 >
-> On the left, you have the **Arrivals energy**—people are still coming in, settling. You want tracks that welcome people without demanding full attention yet.
+> On the left, **Arrivals energy**—people are still settling in as the night winds down. You want tracks that invite them in gently, no pressure yet.
 >
-> In the middle, **Lock-in energy**—people are focused, dancing, fully engaged. You have room to take risks here; the crowd is with you.
+> In the middle, **Lock-in energy**—people are fully present, dancing, connected to the moment. You can deepen the feeling here; they're with you.
 >
-> And on the right, **Wanderers**—people are chatting, moving around, having conversations. You need music that works *in the background of their night*, not against it.
+> And on the right, **Wanderers**—people are having conversations, moving between spaces, present but not glued to the dance floor. You need music that *frames their experience* without demanding their full attention.
 >
-> This isn't someone's algorithm telling you what to play. This is **your library**, organized by the decision-making you already do when you perform."
+> This isn't someone's algorithm. This is **your 70 Afterglow tracks**, organized by the decision-making you make when you perform."
 
 **[Let them look for 5–10 seconds. Gesture through the zones to show spatial relationships.]**
 
-> "Notice: tracks that work in multiple moments—they're positioned between the zones. A track tagged as *both* Lock-in and Wanderers sits right between them. Spatial proximity shows the relationship."
+> "Notice: tracks that work in multiple moments—they're positioned between the zones. A track that bridges Arrivals and Lock-in sits right between them. Spatial proximity shows the relationship instantly."
 
 **[Optional: Hover over a track cluster to show nearby tracks fade in/highlight.]**
 
-> "When you hover near a cluster, related tracks become more visible. It's like moving through the space. The interface responds to where you're exploring."
+> "When you hover near a cluster, related tracks become more visible. It's like moving through your own knowledge. The interface responds to where you're exploring."
 
 **[Pause for 3 seconds. Let them absorb the spatial logic.]**
 
@@ -168,7 +168,7 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 - **Yan:** Intentional spatial design, responsive interaction
 - **Carlos:** Musical decision-making shown spatially
 - **Michele:** Intuitive navigation; learnable structure
-- **Romain:** Practical browsing method
+- **Romain:** Practical browsing, specific moment clarity
 
 ---
 
@@ -178,49 +178,53 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 > "Now, here's where the magic happens.
 >
-> See this track? **'Solar Pool.'** When I organize by genre and BPM, it's buried. But positioned here—right at the intersection of Bridge and Lock-in—I see it immediately. I see why it belongs.
+> See this track? [Click on a well-positioned track at Bridge + Lock-in.] When I'm browsing by genre and BPM, I might never think to play this here. But positioned here—right where Bridge meets Lock-in—I see it immediately. I see exactly what it does.
 >
-> It's positioned in a space that tells me: 'People are locked in. This track bridges a moment. This is where 'Solar Pool' does its best work.'
+> This tells me: 'For Afterglow, when people are locked in and you need a moment of transition, this track is *your* answer.'
 >
-> That's not recommendation. That's **clarity**. That's the moment where you realize: *I have material strategically positioned. I understand how to use it.*
+> That's not recommendation. That's **clarity**. That's when you realize: *I own exactly what this moment needs.*
 >
-> And it happened because you were browsing your own library—exploring what you actually have—organized by how you think about it."
+> And it happened not because an algorithm told you. It happened because you were browsing your own library—your Afterglow collection—organized by how you actually think when you DJ."
 
 **[Click on the track to show detail view.]**
 
 **[Show the track details: artist, duration, tags.]**
 
-> "Look at the tags: Afterglow. Bridge. Lock-in.
+> "Look at the tags: Afterglow. Bridge. Lock-in (confidence 8).
 >
-> This isn't a system deciding anything. *You* tagged this honestly when you curated your library. The system is just showing you *why it belongs here*. Where your own thinking positioned it."
+> This isn't a system deciding anything. *You* tagged this track when you know it belongs here—for this moment, in this role, with this crowd. The system is showing you *your own thinking*. Where you positioned it."
 
 **[Pause for 3–5 seconds. Let them absorb the moment.]**
 
 **Judge resonance:**
 - **All judges:** Universal moment
 - **Richie:** Your decision-making, not automation
-- **Carlos:** Musical logic shown clearly
-- **Romain:** Real material rediscovered
+- **Carlos:** Musical logic shown clearly; moment-specific placement
+- **Romain:** Practical clarity for real scenarios
 
 ---
 
-#### Show the Arc (45 seconds)
+#### Show Multi-Vibe Readiness (45 seconds)
 
-**[Move back from the Lock-in zone. Gesture to all three zones together.]**
+**[Click back to Timeline view. Gesture to the Sunrise Reset phase. Make eye contact.]**
 
-> "So in the few minutes we've been here, what actually happened?
+> "That's Afterglow. Now here's where it gets powerful.
 >
-> You opened the app. You chose your scenario (Pool Party).
+> If I get pulled to sunrise instead—a completely different moment, completely different vibe—I click on Sunrise Reset."
+
+**[Click on Sunrise Reset. Constellation loads briefly (42 tracks, different spatial arrangement).]**
+
+> "Same navigation logic. Different context. I scan the zones, I see what I have for sunrise—the ethereal tracks, the restorative moments, the contemplative journeys.
 >
-> You scanned your library spatially—taking in Arrivals, Lock-in, Wanderers all at once.
->
-> You *rediscovered* an underplayed track that fits perfectly.
->
-> And now you have a sense of the arc: people arriving → locked in focus → moving and socializing.
->
-> You didn't scroll through 50 track names. You *explored your own library like a map*.
->
-> And you feel confident. You know you have material for this gig."
+> And now, in the 10 minutes since I opened the app, I've prepped Afterglow *and* Sunrise. I'm ready for either moment. I'm ready for the festival."
+
+**[Pause for 2 seconds. Let the readiness land.]**
+
+**Judge resonance:**
+- **All judges:** Multi-scenario prep demonstrated
+- **Richie:** Confidence in real-world uncertainty
+- **Romain:** Practical time-saving
+- **Michele:** Intuitive navigation carries across contexts
 
 ---
 
@@ -228,11 +232,9 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 **[Step back. Make eye contact. Warm, confident tone.]**
 
-> "This concept works for any scenario: house parties, festivals, Burning Man camps, ad hoc gigs. Anywhere you don't know the setup in advance.
+> "This is what happens when you organize your library across multiple vibes, and navigate each vibe by how you actually DJ—by moment and role, not by metadata alone.
 >
-> The core insight: organize your library the way you actually *navigate it*—by context, moment, and role. Not by metadata alone.
->
-> The result: faster prep, real rediscovery, and a browsing experience that feels like exploring *your own knowledge*, not fighting a system.
+> You don't spend hours building separate playlists. You see what you have for each scenario instantly. You scan spatially, you discover tracks you own but haven't reconsidered, and you feel genuinely prepared.
 >
 > That's Afterglow."
 
@@ -246,13 +248,13 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 | Moment | What to Show | Action | Judge Focus |
 |--------|--------------|--------|-------------|
-| **0–30 sec** | (Nothing yet) | Deliver opening. Build empathy for the problem | Richie, Michele |
-| **30–60 sec** | Timeline view | Point to phases. Click Pool Party. Pause 2 sec | All |
-| **60–80 sec** | (Transition) | Explain the three zones briefly | Carlos, Michele |
-| **80–240 sec** | Constellation view | Describe zones. Let them look. Hover to show proximity | Yan, Romain, Carlos |
-| **240–360 sec** | Underplayed track | Point out rediscovery moment. Show why it belongs there | All |
-| **360–420 sec** | (Full view) | Gesture to the arc. Show confidence it creates | Richie, Michele |
-| **420+ sec** | (Ready for Q&A) | Close with summary. Emphasize it's their library, their decisions | All |
+| **0–30 sec** | (Nothing yet) | Open with festival scenario. Build empathy for multi-vibe prep uncertainty | Richie, Michele, Romain |
+| **30–60 sec** | Timeline view | Point to all 7 contexts. Explain multi-scenario challenge. Click Afterglow | All |
+| **60–80 sec** | (Transition) | Explain the three zones briefly in Afterglow context | Carlos, Michele |
+| **80–240 sec** | Constellation view | Describe zones in detail. Let them look at spatial relationships. Hover to show proximity | Yan, Romain, Carlos |
+| **240–360 sec** | Track detail | Click a well-positioned track. Show tags. Explain why it belongs in this moment | All |
+| **360–405 sec** | Timeline + Sunrise | Click back to Timeline. Demonstrate Sunrise Reset constellation. Show multi-vibe readiness | All |
+| **405–435 sec** | (Ready for Q&A) | Close with festival-ready summary. Emphasize their library, their decisions across contexts | All |
 
 ---
 

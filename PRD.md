@@ -20,19 +20,21 @@
 ## 2. Problem Statement
 
 ### The Real Problem
-DJs organize their libraries with technical metadata (genre, BPM, key) because that's what existing tools support. But when actually preparing to perform, DJs navigate by emotional and situational logic: **When would I play this? Why? What's the crowd state?**
+DJs prepare for gigs by organizing music into playlists—but they don't know which vibe they'll need until they arrive. At a festival or multi-day event, you might play Afterglow, sunrise wind-down, late-night warehouse, or a daytime pool vibe. You need to be ready for *any* of it.
 
-This mismatch means that within a single moment (e.g., an Afterglow set), a DJ's library becomes invisible. You know the genre, BPM, and key—but not which tracks bridge moments, which lock people in, and which work for a wandering crowd. Great tracks get lost because they don't fit metadata folders.
+Current solutions: Create 10–15 playlists (which takes hours), or wing it on the fly (which kills confidence). Neither works.
+
+The deeper issue: **Even if you organize by vibe, you navigate within each vibe using genre/BPM.** But when you're actually DJing a moment, you don't think "play all 120 BPM house." You think "I need a Bridge moment that locks people in" or "something that works with a wandering crowd." Great tracks get lost because they don't fit the metadata you're browsing.
 
 **Current friction:**
-- Great tracks are buried in lists organized by genre/BPM, not by how you actually navigate them
-- Organization is mentally heavy; you spend prep time scrolling instead of selecting
-- You rediscover the same 20 tracks because you don't see what else you have
-- Browse experience is linear (lists, filters) not exploratory or spatial
-- Confidence in your selections depends on memory, not clarity
+- Prepping multiple vibes (Afterglow, Sunrise, Club) takes hours of playlist building
+- You don't know what you actually have for each vibe until you start browsing
+- Within each vibe, genre/BPM organization doesn't match how you navigate
+- You're not confident you'll find the right track fast
+- Great material stays invisible because you can't see role + crowd relationships
 
 ### Why It Matters
-An emerging DJ who feels lost in their own library stops DJing. A confident DJ discovers cross-genre combinations they wouldn't have found otherwise. Organization directly impacts creativity and performance. When you can see your full Afterglow library mapped by "How do I actually navigate this?" instead of "What genre is it?"—you prep faster, rediscover forgotten gems, and feel genuinely ready.
+A confident DJ with organized vibes can say "yes" to a surprise sunset set. An unprepared DJ has to say no. Organization directly impacts opportunity and performance. When you can see your library organized by **vibe AND by how you navigate each vibe**—you prep multiple scenarios in minutes, not hours. You know what you have. You're ready.
 
 ---
 
@@ -52,48 +54,50 @@ A three-layer library browsing system:
 - A mood tagging system (tags reflect DJ decision-making: when/why/crowd)
 
 ### Core Value
-- **For the DJ:** Within a single set (e.g., Afterglow), navigate your library by *how you actually think*. Find the track that bridges moments. Rediscover forgotten gems. Feel confident in your selections.
-- **For emerging DJs:** Reduce mental load of organizing. See your full library instantly. Make better use of what you already have.
-- **For the product:** Organize libraries by DJ decision-making (when/why/crowd) instead of metadata alone. Spatial browsing is faster and more exploratory than lists.
+- **For the DJ:** Open a vibe and suddenly understand how your tracks relate. See what you own but hadn't reconsidered. Navigate by *how you actually think* (role + crowd state, not genre/BPM) and rediscover your own library. Feel genuinely prepared for any moment in that vibe.
+- **For emerging DJs:** Build confidence in your library organization. Quickly prep multiple vibes when festival bookings are uncertain. Make better use of what you already own.
+- **For the product:** Organize libraries by DJ decision-making (when/why/crowd), not just metadata. Spatial browsing reveals relationships and supports rediscovery within each vibe.
 
 ---
 
 ## 4. Target User
 
 ### Primary User
-**Emerging and casual DJs** (playing 1–4 gigs/month, 500–5,000 tracks)
-- Feel lost in their own library (great tracks buried in lists)
-- May feel overwhelmed by organization systems
-- Needs clarity and confidence within a single moment/set
-- Thinks in moods and moments ("What role does this play?"), not BPM/genre
-- Wants to rediscover underplayed material easily
+**Emerging and casual DJs** (playing 1–8 gigs/month, 500–5,000 tracks)
+- Play multi-day events (festivals, Burning Man, camps) with uncertain set times
+- Need to prep multiple vibes quickly (Afterglow, Sunrise, Club, Pool, etc.)
+- Feel overwhelmed building separate playlists for each scenario
+- Wants confidence to say yes to unexpected gigs
+- Thinks in moments and contexts ("What if I get the sunrise slot?"), not genre/BPM
 
 ### Secondary User
 **Experienced DJs** who want to:
-- Rediscover underplayed material in context
-- Explore cross-genre combinations they wouldn't find in metadata views
-- Organize around performance contexts (not just metadata)
+- Organize around performance contexts across multiple vibes (not just metadata)
+- Prep festival scenarios faster
+- Explore cross-vibe combinations
 
 ### All Users
-Anyone who wants to **see their library clearly, organized by how they actually navigate it**.
+Anyone preparing for **uncertain performance scenarios** where they need to be ready for multiple possible moments.
 
 ---
 
 ## 5. User Stories (MVP Scope)
 
-### Primary Story: Clarity and Rediscovery Within a Single Set
-**As a** DJ prepping an Afterglow set (or any single moment)  
-**I want to** see my full library organized by how I *actually navigate it* (what role, what crowd state)—not genre/BPM  
-**So that** I discover tracks I'd forgotten, understand why they belong together, and feel confident in my selections
+### Primary Story: Rediscover Your Library Within a Vibe
+**As a** DJ who's recently added music to my Afterglow vibe (or hasn't browsed it spatially in a while)  
+**I want to** see how all my tracks relate to each other—by the roles they play and the crowd energy they fit—instead of scrolling a linear list  
+**So that** I discover combinations I own but hadn't considered, understand my library more deeply, and feel genuinely prepared for any moment in that vibe
 
 **Acceptance Criteria:**
-- I can scan 70 Afterglow tracks spatially in <2 minutes and find exactly what I need
-- I can understand why each track is positioned where it is (see its tags and role)
-- I discover new ways to use tracks I already own because of how they're positioned
-- The constellation shows me relationships I wouldn't see in a list (e.g., "there are lots of Bridge + Lock-in tracks here")
-- I can navigate by performance context (role + crowd) instead of scrolling lists
+- I can open Afterglow and see all 70 tracks organized spatially at once
+- Within the vibe, I navigate by role + crowd state (not genre/BPM)
+- I quickly spot tracks I own but hadn't reconsidered for specific moments
+- Spatial proximity shows me relationships between tracks I didn't consciously know I had
+- Clicking a track explains why it belongs in that zone (tags + reasoning)
+- I feel like I'm exploring *my own knowledge*, not fighting a system
+- In 10–15 minutes, I've scanned a vibe and rediscovered 3–5 tracks I want to use differently
 
-**Real-world example:** I'm prepping an Afterglow set. I open the constellation. I instantly see tracks grouped by "Bridge + Lock-in" vs. "Reset + Wanderers." I spot a track I own that's perfectly positioned for a Bridge moment with a focused crowd. I prep in 15 minutes instead of 45.
+**Real-world example:** I added 8 new tracks to my Afterglow playlist last week. I open Afterglow and see 70 tracks organized by Bridge + Lock-in vs. Reset + Wanderers. I scan the constellation and notice one of the new tracks is perfectly positioned as a Bridge moment—exactly what I need between two lock-in moments. I find 3 other tracks I'd forgotten about that work beautifully in the Wanderers zone. In 12 minutes, I understand my library way better and feel confident I have material for any moment in that vibe.
 
 ---
 
@@ -260,26 +264,26 @@ Anyone who wants to **see their library clearly, organized by how they actually 
 ## 12. Demo Narrative (High-Level)
 
 ### 30-Second Hook
-You're prepping an Afterglow set. You have 70 tracks. You know their genre and BPM. But you can't see which ones bridge moments or work with a wandering crowd. You spend 45 minutes scrolling. Afterglow shows you your library organized by *how you actually navigate it*—in minutes, you prep and rediscover forgotten gems.
+You're heading to a festival. You might play Afterglow, sunrise wind-down, or late-night warehouse. You need multiple vibes prepped on a USB. Afterglow shows you your library organized by vibe AND by how you actually navigate each vibe—no more hours of playlist building. You're ready for anything.
 
 ### 60-Second Full Story
-**Problem:** DJs organize by metadata (genre, BPM). But that's not how you navigate when prepping. You think: What role does this track play? Does it lock people in or work with a wandering crowd? When in the arc?
+**Problem:** Multi-day events force you to prep multiple scenarios, but you don't know which one you'll need. Building separate playlists takes hours. And within each vibe, you navigate by genre/BPM—not by role and crowd state.
 
-**Insight:** If we organize by *DJ decision-making* (role, crowd state) instead of metadata, you see your library clearly, prep faster, and rediscover material you'd forgotten.
+**Insight:** If you organize your library into distinct vibes, AND you organize within each vibe by *how you actually navigate* (role, crowd state), you can prep for uncertainty in minutes.
 
-**Solution:** Spatial constellation: X-axis = Journey Role (Opener → Home Stretch), Y-axis = Crowd State. Same 70 tracks, arranged by how you actually think about them.
+**Solution:** A system where you see all your vibes at once (timeline), dive into each one (constellation), and navigate spatially within each vibe (X=Role, Y=Crowd State).
 
-**Benefit:** You see relationships you'd never find in a list. You rediscover underplayed tracks that are perfect. You prep in 15 minutes instead of 45.
+**Benefit:** You arrive at a festival with 3–4 organized vibes ready. You feel confident. You can say yes to unexpected opportunities.
 
 ### 5–7 Minute Walkthrough
-1. **Setup:** "I'm prepping an Afterglow set. I have 70 tracks. I know genre and BPM, but not how they fit together." (30 sec)
-2. **Show the problem:** "Lists don't show me the relationships. This track is great, but where does it sit in my arc?" (30 sec)
-3. **Open the constellation:** "Same 70 tracks, different view. X-axis = Journey Role. Y-axis = Crowd State." (60 sec)
-4. **Explain the logic:** "I can instantly see all my Bridge tracks, all my Lock-in moments. That's how I think." (60 sec)
-5. **Hover interaction:** Show nearby tracks and how they relate in space (30 sec)
-6. **Find a well-positioned track:** Click on a track positioned at Bridge + Lock-in, show why it's perfect (60 sec)
-7. **The moment:** "This track is positioned exactly where it belongs—Bridge moment, focused crowd. That's the clarity spatial browsing gives you." (30 sec)
-8. **Close:** "That's the power of organizing by DJ decision-making, not metadata. See your library clearly." (15 sec)
+1. **Setup:** "I'm going to a festival. Could play Afterglow, sunrise, late-night, or daytime. I need to be ready for any of it." (30 sec)
+2. **Show the system:** "Here's my library organized into vibes. Seven different moments I might need to DJ." (Timeline view, explain the 7 contexts) (40 sec)
+3. **Dive into Afterglow:** "Let me show you what I have for Afterglow. 70 tracks organized by role and crowd state." (Open constellation) (40 sec)
+4. **Explain the spatial logic:** "X-axis = Journey Role (Opener to Home Stretch). Y-axis = Crowd State (people arriving to wandering). I can instantly see what Bridge moments I have for locked-in crowds." (60 sec)
+5. **Hover interaction:** Show nearby tracks and relationships (30 sec)
+6. **Find the right track:** Click a track at Bridge + Lock-in, show why it's perfect for that moment (60 sec)
+7. **Show multi-vibe readiness:** "And if I get pulled to sunrise?" (Quick flip to Sunrise Reset constellation) "I have 42 tracks for that vibe too. Different context, same navigation logic." (60 sec)
+8. **Close:** "That's how I prep for festivals. I know exactly what I have for every scenario. I'm ready." (20 sec)
 
 ---
 

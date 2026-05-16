@@ -87,13 +87,13 @@ A track might work in multiple crowd states: "Lock-in (8) + Wanderers (5)"—bes
 
 ## 5. Demo Scenario
 
-✓ **Afterglow walkthrough**
+✓ **Within-vibe rediscovery and clarity walkthrough**
 
-- "You're prepping an Afterglow set. You have 70 tracks organized by genre/BPM."
-- "15-minute prep window. You need to understand the shape of your library and find the right track for a bridge moment."
-- Real constraint: spatial discovery is faster than scrolling lists
-- Demo shows full three-layer flow (Timeline → Constellation → Track Detail)
-- Ends with rediscovery moment + clarity (underplayed track that's perfectly positioned)
+- "I recently added music to my Afterglow vibe. I want to understand how everything fits together."
+- Real moment: DJ hasn't browsed the vibe spatially; wants to see relationships, discover forgotten tracks
+- Demo shows: Timeline (all vibes visible) → click Afterglow → spatial constellation reveals relationships → scan and discover 3–5 tracks to use differently → "I understand my library now"
+- Ends with clarity moment: "I have what I need for any moment in this vibe. I'm genuinely prepared."
+- Bonus: briefly flip to Sunrise Reset to show the same navigation logic works across vibes (optional, time permitting)
 
 ---
 

@@ -143,17 +143,18 @@ This is intentional and reflects real DJ thinking. Use confidence scores to weig
 
 ## Demo Narrative (For Reference)
 
-**Setup:** "I'm prepping an Afterglow set. I have 70 tracks organized by genre/BPM. I can't see what I actually have or how they relate."
+**Setup:** "I'm heading to a festival. Could get Afterglow, sunrise, late-night, or daytime. I need multiple vibes prepped on a USB—but separate playlists take hours."
 
-**Solution:** "Afterglow shows the same 70 tracks organized by *how I navigate* — role and crowd state. Same tracks, completely different view."
+**Solution:** "Afterglow shows all my vibes at once (Timeline), and within each vibe, I navigate by *how I actually DJ* — role and crowd state, not genre/BPM."
 
 **Walkthrough:**
-1. Open timeline → show Afterglow selected
-2. Open constellation → explain X-axis (Role) and Y-axis (Crowd State)
-3. Hover interaction → show tracks light up based on proximity
-4. Click hero track → show detail view with confidence scores
-5. "See? I haven't played this in months, but it's perfectly positioned for a Bridge moment with a focused crowd."
-6. Close: "That's Afterglow. Clarity within your moment."
+1. Open timeline → show 7 contexts available, click Afterglow
+2. Open Afterglow constellation → explain X-axis (Journey Role) and Y-axis (Crowd State)
+3. Hover interaction → show relationships between nearby tracks
+4. Click hero track → show detail view, explain why it belongs in this moment
+5. "This track bridges moments with a locked-in crowd—exactly what Afterglow needs here."
+6. Flip to Sunrise Reset → "Different context, same navigation. I'm ready for either scenario."
+7. Close: "That's Afterglow. Prep multiple vibes, know exactly what you have for each moment."
 
 ---
 
