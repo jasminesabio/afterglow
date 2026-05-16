@@ -9,12 +9,12 @@
 
 ## 1. MVP Scope
 
-✓ **Build Pool Party constellation only** (not all five time phases)
+✓ **Build Afterglow constellation only** (not all seven time phases)
 
-- Timeline view shows all five phases as options
-- Only Pool Party has a complete, playable constellation
-- Other phases can be sketched or greyed out (future work)
-- This scope proves the concept works for one real DJ scenario
+- Timeline view shows all seven phases as options
+- Only Afterglow has a complete, fully-built constellation (70 tracks)
+- Other phases can be greyed out or sketched (future work)
+- This scope proves the concept works for within-context clarity and rediscovery
 - Fits 24-hour sprint timeline
 
 ---
@@ -26,7 +26,7 @@
 - Hardcoded or manually arranged (no force-directed graphs)
 - X-axis = Journey Role (Opener → Home Stretch)
 - Y-axis = Crowd State (Arrivals → Wanderers)
-- Color/grouping = Time/Setting (Pool Party)
+- Color/grouping = Time/Setting (Afterglow)
 - Every position is traceable to track's tags
 - DJ can understand "why is this track positioned here?"
 
@@ -34,14 +34,14 @@
 
 ## 3. Demo Library
 
-✓ **Real tracks, 150 total, manually tagged**
+✓ **Real tracks, 70 total, manually tagged**
 
 - Use Creative Commons, royalty-free, or licensed music
 - Real artist names (no dummy data)
-- Authentic DJ curation (you listen, you tag)
+- Authentic DJ curation from your Afterglow playlist (you listen, you tag)
 - Mix of genres (house, garage, soul, funk, ambient, breaks, world)
-- Include 3–5 underplayed candidates (play count < 5)
-- Tagging approach: Manual (answer three questions per track)
+- Include 3–5 underplayed candidates (play count < 5) as rediscovery heroes
+- Tagging approach: Manual + hybrid efficiency (answer three questions per cluster/template)
 
 ---
 
@@ -53,12 +53,12 @@
 - Sunrise Reset
 - Warm-up
 - Festival Brunch
-- Pool Party ← MVP focus
-- Afterglow
+- Pool Party
+- Afterglow ← MVP focus (70 tracks from your Afterglow playlist)
 - Club
 - Late Night Warehouse
 
-Most tracks fit one time/setting. Some tracks genuinely work across two (e.g., a track that bridges Pool Party and Afterglow energy). Tag both with confidence: "Pool Party (9) + Afterglow (6)"—the track definitely works for Pool Party but could also work for Afterglow wind-down.
+Most Afterglow tracks fit one time/setting (tag as Afterglow 9). A few might genuinely work in multiple contexts (e.g., ethereal tracks that also work for Sunrise Reset). Tag both with confidence: "Afterglow (9) + Sunrise Reset (6)"—primarily Afterglow but could bridge into sunrise.
 
 ### Journey Role (pick 1–2+, each with confidence)
 - Opener
@@ -81,30 +81,30 @@ A track might work in multiple crowd states: "Lock-in (8) + Wanderers (5)"—bes
 - "This is equally Opener and Bridge (both 8)"
 - "This works best Lock-in (9) but also fine with Wanderers (6)"
 
-**MVP scope:** Pool Party constellation only. Other time/settings available for future phases. **No custom tags.** These tags are sufficient. Post-hackathon: explore user customization.
+**MVP scope:** Afterglow constellation only. Other time/settings available for future phases. **No custom tags.** These nine tags are sufficient. Post-hackathon: explore user customization and multi-phase build.
 
 ---
 
 ## 5. Demo Scenario
 
-✓ **Pool Party walkthrough**
+✓ **Afterglow walkthrough**
 
-- "You get texted: friend asks you to DJ a pool party at 4 pm"
-- 2-hour prep window
-- Real constraint: don't know exact crowd/energy
-- Demo shows full three-layer flow
-- Ends with rediscovery moment + confidence
+- "You're prepping an Afterglow set. You have 70 tracks organized by genre/BPM."
+- "15-minute prep window. You need to understand the shape of your library and find the right track for a bridge moment."
+- Real constraint: spatial discovery is faster than scrolling lists
+- Demo shows full three-layer flow (Timeline → Constellation → Track Detail)
+- Ends with rediscovery moment + clarity (underplayed track that's perfectly positioned)
 
 ---
 
-## 6. Rediscovery Track
+## 6. Hero Track for Demo
 
-✓ **Ready to find during library curation**
+✓ **Ready to identify during UI demo**
 
-- Requirements: play count ≤ 5, Pool Party context, genuinely good, ideally Bridge role
-- You'll identify this when curating (listen to 150, 3–5 will stand out)
-- Must be real track (not contrived for demo)
-- Will be the hero moment of the walkthrough
+- Requirements: Afterglow context, genuinely positioned well (Bridge or Reset role), works with Lock-in or Arrivals crowd
+- You'll identify this during demo walkthrough (click a well-positioned track)
+- Must be real track from your Afterglow collection (not contrived)
+- Will be the moment in the walkthrough where spatial positioning makes sense ("Look, this track is perfectly positioned for this moment")
 
 ---
 
@@ -113,33 +113,35 @@ A track might work in multiple crowd states: "Lock-in (8) + Wanderers (5)"—bes
 ✓ **24-hour sprint with clear role split**
 
 **PM / Visionary (Jasmine):**
-- Curate demo library (150 tracks, tagged)
-- Own demo narrative (all three versions)
+- Tag demo library (70 Afterglow tracks, use hybrid efficiency approach)
+- Own demo narrative (one focused story for Afterglow)
 - Make product decisions during build
-- Identify rediscovery track
-- QA: Does it solve the real DJ problem?
+- Identify 3–5 rediscovery candidates
+- QA: Does it solve within-context clarity + rediscovery?
 
 **Visualizer / Creative Technologist (Teammate):**
 - Design spatial encoding (confirm X/Y/color mapping)
-- Build timeline view
-- Build Pool Party constellation (40–50 tracks)
+- Build timeline view (all seven phases, only Afterglow interactive)
+- Build Afterglow constellation (70 tracks)
 - Implement zone labels + hover interaction
 - Polish interactions (responsive, no lag)
 
 **Timeline:** 24 hours total  
-**Breakdown:** Library (6–10h) + UI (12–16h) + Polish (3–5h) + Demo (2–3h)
+**Breakdown:** Tagging (6–8h) + UI (12–14h) + Polish (3–5h) + Demo Practice (2–3h)
 
 ---
 
 ## 8. Tagging Approach
 
-✓ **Manual tagging (not algorithmic seed)**
+✓ **Manual tagging with hybrid efficiency**
 
-- You listen to each track
-- Ask three questions: When? Why? What crowd?
-- Tag based on honest DJ thinking
-- Time estimate: 6–10 hours for 150 tracks
-- Quality over speed (authenticity matters)
+- Group tracks by genre/BPM to identify templates
+- Create 4–6 template tag sets (one per cluster)
+- Apply templates to cluster members with per-tag confidence scores
+- Spot-check 2–3 per cluster; adjust confidence as needed
+- Identify 3–5 rediscovery candidates (low play count, perfect placement)
+- Time estimate: 6–8 hours for 70 tracks
+- Quality + efficiency (templates speed up tagging without sacrificing honesty)
 
 ---
 
@@ -182,7 +184,7 @@ A track might work in multiple crowd states: "Lock-in (8) + Wanderers (5)"—bes
 | AI recommendations | Removes DJ agency; contradicts core message |
 | User accounts | Not needed for demo; MVP is stateless |
 | Custom tags | Adds complexity; nine tags are sufficient |
-| Multiple phases | Pool Party only; proves concept |
+| Multiple phases | Afterglow only; proves concept within one context |
 | Search/filter UI | Spatial discovery is primary; search is secondary |
 | Analytics | Nice later; not core to demo |
 
@@ -223,27 +225,28 @@ A track might work in multiple crowd states: "Lock-in (8) + Wanderers (5)"—bes
 
 ## TL;DR
 
-✓ Pool Party only  
-✓ Intentional spatial positioning  
-✓ Real tracks, real tags  
-✓ Nine tags (no custom)  
-✓ Manual tagging  
-✓ Pool party demo scenario  
-✓ DJ decision-making language (not "mood")  
-✓ 24-hour sprint with role split  
-✓ Judge context for reference (not primary)  
+✓ Afterglow constellation only (70 tracks)
+✓ Intentional spatial positioning (X=Role, Y=Crowd)
+✓ Real tracks from your Afterglow playlist, real tags
+✓ Nine tags (no custom)
+✓ Hybrid tagging efficiency (templates + spot-check)
+✓ Within-context clarity + rediscovery demo narrative
+✓ DJ decision-making language (not "mood")
+✓ 24-hour sprint with role split
+✓ Judge context for reference (not primary)
+
 
 **Everything else** is either implementation detail (planning mode will clarify) or explicitly out of scope.
 
 ---
 
-## Sign-Off
+## Sign-Off (Updated May 16)
 
 **Greenlit by:** Jasmine Sabio  
-**Approved for build:** Yes  
-**Ready to plan:** Yes  
+**Tagging complete:** ✅ Yes (73 tracks tagged, afterglow-tags.json ready)  
+**Ready for UI build:** Yes  
 **Ready to hack:** Yes  
 
-**Next step:** Read PRD + IMPLEMENTATION-BRIEF with your teammate, align, then go into planning mode.
+**Next step:** Read TAGGING-COMPLETE.md + PRD + IMPLEMENTATION-BRIEF with your teammate, then start UI build.
 
 You're good to go. 🎵

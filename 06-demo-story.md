@@ -20,11 +20,11 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 ### 30-Second Script
 
-> "I'm a DJ, and I get asked to play spontaneous gigs—house parties, festivals, pool parties—where I don't know the setup in advance. My library is organized by genre and BPM, but when I'm actually DJing, I navigate by *context and moment*. So great tracks get lost because they don't fit neatly in my folders.
+> "I'm a DJ, and my library of 70 Afterglow tracks is organized by genre and BPM. But when I'm prepping a set, I navigate differently: *What role does this track play? Does it bridge moments or work with a wandering crowd?* Great tracks get lost in folders because metadata doesn't capture that.
 >
-> **Afterglow flips that.** Instead of organizing by metadata, we organize by *when you play and why you play it*. You start with a timeline of the day, then browse spatial maps of the performance contexts, then discover your tracks.
+> **Afterglow flips that.** Instead of lists organized by metadata, we organize by *how you actually navigate*—spatially, by role and crowd state. Same 70 tracks, visible in minutes.
 >
-> The result: you feel more confident prepping for uncertain gigs, and you rediscover material you'd forgotten about—tracks you own that actually fit this moment."
+> The result: you prep faster, rediscover forgotten gems, and feel *confident* in your selections. You see relationships in your library you'd never find in a list."
 
 **Timing:** ~30 seconds at natural conversational pace.
 
@@ -50,15 +50,15 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 ### 60-Second Script
 
-> "Most DJ tools organize music by technical metadata—genre, BPM, key. That works great if you're preparing for a specific gig where you know exactly what time and context you're playing.
+> "Most DJ tools organize music by technical metadata—genre, BPM, key. But when a DJ is actually prepping a set, that's not how you think. You think: *What role does this track play? Bridge moments? Lock-in? Lingering?*
 >
-> But in real life, DJs get booked spontaneously for events where the setup is uncertain. A house party could start at 6 pm or 10 pm. A festival set could be brunch, afternoon, or late night. You don't know until you arrive.
+> Here's the gap: Your 70-track Afterglow collection is great, but 80% of your library is invisible. You scroll through lists organized by genre, see the same 20 tracks, and forget about the rest. Great tracks are buried because they don't fit neatly into metadata folders.
 >
-> When you're actually DJing, you don't navigate by BPM. You navigate by *moment and context*: What time of night is it? Is the crowd locked-in and focused, or wandering and social? Am I opening, building momentum, resetting energy, or closing the night?
+> When you browse by *how you actually navigate*—role and crowd state—everything becomes visible instantly. You're not scrolling; you're exploring a spatial map of your own library.
 >
-> **Afterglow** lets you organize your library the way you actually think about it. You start with a timeline of the day. Then you explore spatial maps of performance contexts—like a tangible map of your own library.
+> **Afterglow** organizes your tracks by performance contexts instead of metadata. Same 70 tracks, radically different view. You prep in 15 minutes instead of 45. You rediscover forgotten gems. You feel confident in your selections.
 >
-> The result: you can prepare for uncertain gigs in minutes instead of hours. You rediscover tracks you'd forgotten. And you feel *confident* that you have material for whatever moment comes."
+> That's the power of organizing by DJ decision-making, not algorithms or genres."
 
 **Timing:** ~60 seconds at natural pace.
 
@@ -86,15 +86,15 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 - The main hackathon pitch (judges have 5–10 minutes per project)
 - Close-up demos at your booth
 
-**Your goal:** Walk judges through the three-layer model, tell the Pool Party story, land the rediscovery moment. Emphasize *you* making decisions, *your* library, *your* artistry.
+**Your goal:** Walk judges through the three-layer model, tell the Afterglow story, land the rediscovery moment. Emphasize *you* making decisions, *your* library, *your* artistry—not automation.
 
 **Timing breakdown:**
-- Opening hook (30 sec)
-- Setup scenario (30 sec)
-- Timeline explanation (20 sec)
-- Constellation walkthrough (2.5–3 min)
+- Opening hook (20 sec)
+- Problem setup (40 sec)
+- Timeline + Constellation intro (1 min)
+- Spatial logic walkthrough (1.5–2 min)
 - Rediscovery moment (1–1.5 min)
-- Wrap-up (30 sec)
+- Wrap-up + value prop (30 sec)
 
 ---
 
@@ -172,29 +172,27 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 ---
 
-#### The Rediscovery Moment (1–1.5 minutes)
+#### The Spatial Clarity Moment (1–1.5 minutes)
 
-**[Move to the Lock-in zone. Point to or click on an underplayed track. Make eye contact.]**
+**[Move to the Lock-in zone. Point to or click on a well-positioned track. Make eye contact.]**
 
-> "Now, here's where something real happens.
+> "Now, here's where the magic happens.
 >
-> See this track? **'Solar Pool.'** Play count: 2. You'd basically forgotten about it.
+> See this track? **'Solar Pool.'** When I organize by genre and BPM, it's buried. But positioned here—right at the intersection of Bridge and Lock-in—I see it immediately. I see why it belongs.
 >
-> But it's right here in the Lock-in zone—exactly where it belongs for a 4 pm pool party where people are actually engaged with the music.
+> It's positioned in a space that tells me: 'People are locked in. This track bridges a moment. This is where 'Solar Pool' does its best work.'
 >
-> You hover over it, and you remember: 'Oh right. I tagged this years ago. It's **exactly what I need** for this moment. Why did I forget about this?'
+> That's not recommendation. That's **clarity**. That's the moment where you realize: *I have material strategically positioned. I understand how to use it.*
 >
-> That's not recommendation. That's **rediscovery**. That's the moment where you realize: *I have material I'd forgotten. I'm more prepared than I thought.*
->
-> And it happened because you were browsing your own library—exploring what you actually have—not scrolling through a list."
+> And it happened because you were browsing your own library—exploring what you actually have—organized by how you think about it."
 
 **[Click on the track to show detail view.]**
 
-**[Show the track details: artist, duration, tags, play count.]**
+**[Show the track details: artist, duration, tags.]**
 
-> "Look at the tags: Pool Party. Bridge. Lock-in.
+> "Look at the tags: Afterglow. Bridge. Lock-in.
 >
-> This isn't a system deciding anything. *You* tagged this honestly when you added it to your library. The system is just showing you *why it belongs here*. Where your own thinking led you."
+> This isn't a system deciding anything. *You* tagged this honestly when you curated your library. The system is just showing you *why it belongs here*. Where your own thinking positioned it."
 
 **[Pause for 3–5 seconds. Let them absorb the moment.]**
 
@@ -296,9 +294,9 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 **Your answer:**
 > "Emerging and casual DJs—people who get booked spontaneously and feel overwhelmed organizing their library.
 >
-> But also experienced DJs who want to rediscover underplayed material or explore cross-genre combinations in a more intuitive way.
+> But also experienced DJs who want to see their library organized by performance context instead of metadata, or explore cross-genre combinations in a more intuitive way.
 >
-> Anyone who DJs in uncertain scenarios or wants to organize around performance contexts, not just metadata."
+> Anyone who wants to navigate their library by how they actually think about music—by role and crowd state, not just BPM and genre."
 
 ---
 

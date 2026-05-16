@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afterglow Batch Tagger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .progress {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 30px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .track-info {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .track-info h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .track-info p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .track-info .meta {
+            font-size: 12px;
+            color: #999;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .tag-dimension {
+            margin-bottom: 30px;
+        }
+
+        .tag-dimension h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .tag-option:hover {
+            background: #f0f0f0;
+        }
+
+        .tag-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #2563eb;
+        }
+
+        .tag-label {
+            flex: 1;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .tag-option.checked .tag-label {
+            font-weight: 500;
+            color: #2563eb;
+        }
+
+        .confidence-section {
+            display: none;
+            margin-left: 30px;
+            margin-top: 8px;
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .tag-option.checked .confidence-section {
+            display: flex;
+        }
+
+        .confidence-label {
+            font-size: 12px;
+            color: #666;
+            min-width: 80px;
+        }
+
+        .confidence-slider {
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .confidence-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2563eb;
+            min-width: 25px;
+            text-align: right;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            cursor: pointer;
+            accent-color: #2563eb;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button.nav {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        button.nav:hover:not(:disabled) {
+            background: #d0d0d0;
+        }
+
+        button.nav:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        button.next {
+            background: #2563eb;
+            color: white;
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        button.next:hover {
+            background: #1d4ed8;
+        }
+
+        .output-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .output-panel h2 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        #jsonOutput {
+            flex: 1;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 11px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            overflow: auto;
+            resize: none;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .output-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button.export {
+            padding: 10px 16px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        button.export:hover {
+            background: #059669;
+        }
+
+        .file-input-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .file-input-label {
+            display: inline-block;
+            padding: 8px 12px;
+            background: #e0e0e0;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        #csvFile {
+            display: none;
+        }
+
+        .status {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .tag-option.checked {
+            background: #eff6ff;
+        }
+
+        @media (max-width: 1000px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cleared-notice {
+            font-size: 12px;
+            color: #10b981;
+            margin-top: 8px;
+            padding: 8px;
+            background: #f0fdf4;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left: Tagging Panel -->
+        <div class="panel">
+            <h1>Batch Tagger</h1>
+            <div class="progress" id="progress"></div>
+
+            <div class="file-input-wrapper">
+                <label class="file-input-label">
+                    📁 Load CSV
+                    <input type="file" id="csvFile" accept=".csv" />
+                </label>
+                <div class="status" id="csvStatus"></div>
+            </div>
+
+            <div id="taggingArea" style="display: none;">
+                <div class="track-info">
+                    <h2 id="trackTitle"></h2>
+                    <p><strong>Artist:</strong> <span id="trackArtist"></span></p>
+                    <p><strong>Duration:</strong> <span id="trackDuration"></span></p>
+                    <div class="meta">
+                        <p><strong>Genre:</strong> <span id="trackGenre"></span></p>
+                        <p><strong>BPM:</strong> <span id="trackBPM"></span></p>
+                        <p><strong>Key:</strong> <span id="trackKey"></span></p>
+                    </div>
+                </div>
+
+                <!-- Time/Setting -->
+                <div class="tag-dimension">
+                    <h3>Time/Setting</h3>
+                    <div id="timeSettingTags"></div>
+                </div>
+
+                <!-- Journey Role -->
+                <div class="tag-dimension">
+                    <h3>Journey Role</h3>
+                    <div id="journeyRoleTags"></div>
+                </div>
+
+                <!-- Crowd State -->
+                <div class="tag-dimension">
+                    <h3>Crowd State</h3>
+                    <div id="crowdStateTags"></div>
+                </div>
+
+                <div class="controls">
+                    <button class="nav" id="prevBtn" onclick="previousTrack()">← Previous</button>
+                    <button class="next" onclick="nextTrack()">Next →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Output Panel -->
+        <div class="panel output-panel">
+            <h2>JSON Output</h2>
+            <p style="font-size: 12px; color: #666; margin-bottom: 10px;">Tagged tracks appear here. Copy when done.</p>
+            <textarea id="jsonOutput" readonly></textarea>
+            <div class="output-controls">
+                <button class="export" onclick="downloadJSON()">⬇ Download JSON</button>
+                <button class="export" style="background: #f59e0b;" onclick="clearOutput()">🗑 Clear</button>
+            </div>
+            <div class="cleared-notice" id="clearedNotice">Output cleared</div>
+        </div>
+    </div>
+
+    <script>
+        const timeTags = [
+            'Warm-up', 'Pool Party', 'Festival Brunch', 'Afterglow',
+            'Sunrise Reset', 'Club', 'Late Night Warehouse'
+        ];
+
+        const roleTags = ['Opener', 'Bridge', 'Reset', 'Home Stretch'];
+
+        const crowdTags = ['Arrivals', 'Lock-in', 'Wanderers'];
+
+        let tracks = [];
+        let currentIndex = 0;
+        let taggedTracks = [];
+
+        // Load CSV
+        document.getElementById('csvFile').addEventListener('change', handleCSVUpload);
+
+        function handleCSVUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const csv = event.target.result;
+                tracks = parseCSV(csv);
+                taggedTracks = [];
+                currentIndex = 0;
+                document.getElementById('taggingArea').style.display = 'block';
+                document.getElementById('csvStatus').textContent = `✓ Loaded ${tracks.length} tracks`;
+                showTrack();
+                updateProgress();
+            };
+            reader.readAsText(file);
+        }
+
+        function parseCSV(csv) {
+            const lines = csv.trim().split('\n');
+            const tracks = [];
+
+            // Proper CSV parsing that respects quoted fields
+            function parseCSVLine(line) {
+                const result = [];
+                let current = '';
+                let inQuotes = false;
+
+                for (let i = 0; i < line.length; i++) {
+                    const char = line[i];
+                    const nextChar = line[i + 1];
+
+                    if (char === '"') {
+                        if (inQuotes && nextChar === '"') {
+                            current += '"';
+                            i++;
+                        } else {
+                            inQuotes = !inQuotes;
+                        }
+                    } else if (char === ',' && !inQuotes) {
+                        result.push(current.trim());
+                        current = '';
+                    } else {
+                        current += char;
+                    }
+                }
+                result.push(current.trim());
+                return result;
+            }
+
+            for (let i = 1; i < lines.length; i++) {
+                const values = parseCSVLine(lines[i]);
+                if (values.length < 7) continue;
+
+                // Remove quotes from values if present
+                const clean = v => v.replace(/^"(.*)"$/, '$1');
+
+                tracks.push({
+                    num: clean(values[0]),
+                    artist: clean(values[1]),
+                    title: clean(values[2]),
+                    duration: clean(values[3]),
+                    genre: clean(values[4]),
+                    bpm: clean(values[5]),
+                    key: clean(values[6]),
+                    tags: { time: [], role: [], crowd: [] }
+                });
+            }
+
+            return tracks;
+        }
+
+        function showTrack() {
+            if (tracks.length === 0) return;
+
+            const track = tracks[currentIndex];
+            document.getElementById('trackTitle').textContent = track.title;
+            document.getElementById('trackArtist').textContent = track.artist;
+            document.getElementById('trackDuration').textContent = track.duration;
+            document.getElementById('trackGenre').textContent = track.genre || '—';
+            document.getElementById('trackBPM').textContent = track.bpm || '—';
+            document.getElementById('trackKey').textContent = track.key || '—';
+
+            renderTags();
+            updateButtons();
+        }
+
+        function renderTags() {
+            const track = tracks[currentIndex];
+
+            // Time/Setting
+            document.getElementById('timeSettingTags').innerHTML = timeTags.map((tag, i) =>
+                createTagOption(tag, 'time', i)
+            ).join('');
+
+            // Journey Role
+            document.getElementById('journeyRoleTags').innerHTML = roleTags.map((tag, i) =>
+                createTagOption(tag, 'role', i)
+            ).join('');
+
+            // Crowd State
+            document.getElementById('crowdStateTags').innerHTML = crowdTags.map((tag, i) =>
+                createTagOption(tag, 'crowd', i)
+            ).join('');
+
+            // Restore checked state
+            track.tags.time.forEach(t => {
+                const cb = document.querySelector(`input[data-type="time"][value="${t.value}"]`);
+                if (cb) {
+                    cb.checked = true;
+                    cb.parentElement.classList.add('checked');
+                    const conf = cb.parentElement.querySelector('input[type="range"]');
+                    if (conf) conf.value = t.confidence;
+                    updateConfidenceValue(conf);
+                }
+            });
+
+            track.tags.role.forEach(t => {
+                const cb = document.querySelector(`input[data-type="role"][value="${t.value}"]`);
+                if (cb) {
+                    cb.checked = true;
+                    cb.parentElement.classList.add('checked');
+                    const conf = cb.parentElement.querySelector('input[type="range"]');
+                    if (conf) conf.value = t.confidence;
+                    updateConfidenceValue(conf);
+                }
+            });
+
+            track.tags.crowd.forEach(t => {
+                const cb = document.querySelector(`input[data-type="crowd"][value="${t.value}"]`);
+                if (cb) {
+                    cb.checked = true;
+                    cb.parentElement.classList.add('checked');
+                    const conf = cb.parentElement.querySelector('input[type="range"]');
+                    if (conf) conf.value = t.confidence;
+                    updateConfidenceValue(conf);
+                }
+            });
+        }
+
+        function createTagOption(tag, type, index) {
+            const id = `${type}-${index}`;
+            return `
+                <div class="tag-option" data-tag="${tag}">
+                    <input
+                        type="checkbox"
+                        id="${id}"
+                        data-type="${type}"
+                        value="${tag}"
+                        onchange="tagChanged('${type}', '${tag}')"
+                    />
+                    <label for="${id}" class="tag-label">${tag}</label>
+                    <div class="confidence-section">
+                        <span class="confidence-label">Confidence:</span>
+                        <input
+                            type="range"
+                            min="1"
+                            max="10"
+                            value="8"
+                            class="confidence-slider"
+                            onchange="updateConfidenceValue(this)"
+                        />
+                        <span class="confidence-value">8</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function tagChanged(type, tag) {
+            const cb = document.querySelector(`input[data-type="${type}"][value="${tag}"]`);
+            const tagOption = cb.parentElement;
+
+            if (cb.checked) {
+                tagOption.classList.add('checked');
+                const conf = cb.parentElement.querySelector('input[type="range"]').value;
+                tracks[currentIndex].tags[type].push({ value: tag, confidence: parseInt(conf) });
+            } else {
+                tagOption.classList.remove('checked');
+                tracks[currentIndex].tags[type] = tracks[currentIndex].tags[type].filter(t => t.value !== tag);
+            }
+
+            updateJSON();
+        }
+
+        function updateConfidenceValue(input) {
+            const valueSpan = input.parentElement.querySelector('.confidence-value');
+            valueSpan.textContent = input.value;
+
+            // Update tracked confidence
+            const cb = input.parentElement.parentElement.querySelector('input[type="checkbox"]');
+            if (cb && cb.checked) {
+                const type = cb.dataset.type;
+                const tag = cb.value;
+                const conf = parseInt(input.value);
+                const track = tracks[currentIndex];
+                const tagObj = track.tags[type].find(t => t.value === tag);
+                if (tagObj) tagObj.confidence = conf;
+                updateJSON();
+            }
+        }
+
+        function nextTrack() {
+            if (currentIndex < tracks.length - 1) {
+                currentIndex++;
+                showTrack();
+                updateProgress();
+            }
+        }
+
+        function previousTrack() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showTrack();
+                updateProgress();
+            }
+        }
+
+        function updateButtons() {
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+        }
+
+        function updateProgress() {
+            const tagged = tracks.filter(t =>
+                t.tags.time.length > 0 || t.tags.role.length > 0 || t.tags.crowd.length > 0
+            ).length;
+            document.getElementById('progress').textContent = `Track ${currentIndex + 1} of ${tracks.length} | ${tagged} tagged`;
+        }
+
+        function updateJSON() {
+            const output = tracks
+                .filter(t => t.tags.time.length > 0 || t.tags.role.length > 0 || t.tags.crowd.length > 0)
+                .map((t, i) => ({
+                    num: t.num,
+                    artist: t.artist,
+                    title: t.title,
+                    duration: t.duration,
+                    genre: t.genre,
+                    bpm: t.bpm,
+                    key: t.key,
+                    tags: {
+                        time: t.tags.time,
+                        role: t.tags.role,
+                        crowd: t.tags.crowd
+                    }
+                }));
+
+            document.getElementById('jsonOutput').value = JSON.stringify(output, null, 2);
+        }
+
+        function downloadJSON() {
+            const json = document.getElementById('jsonOutput').value;
+            if (!json || json === '') {
+                alert('No tags to download. Tag some tracks first!');
+                return;
+            }
+
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'afterglow-tags.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function clearOutput() {
+            document.getElementById('jsonOutput').value = '';
+            document.getElementById('clearedNotice').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('clearedNotice').style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
