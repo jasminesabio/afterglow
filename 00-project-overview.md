@@ -20,7 +20,7 @@ This mismatch is especially painful when you're uncertain: you need to feel read
 
 ## The Solution (Three Layers)
 
-1. **Timeline View** — Choose your scenario (Pool Party, Sunrise Reset, Post-game, etc.)
+1. **Timeline View** — Choose your scenario (Pool Party, Sunrise Reset, Afterglow, etc.)
 2. **Constellation View** — See all your tracks for that context in a spatial arrangement
    - X-axis: Journey Role (Opener → Home Stretch)
    - Y-axis: Crowd State (Arrivals → Wanderers)

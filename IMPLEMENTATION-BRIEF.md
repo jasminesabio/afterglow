@@ -32,7 +32,7 @@ Track Detail View (artist, duration, tags, play count)
       "tags": {
         "time": [
           {"value": "pool-party", "confidence": 9},
-          {"value": "post-game", "confidence": 5}
+          {"value": "afterglow", "confidence": 5}
         ],
         "role": [
           {"value": "bridge", "confidence": 9},
@@ -123,7 +123,7 @@ const phases = [
   { id: "warmup", name: "Warm-up", color: "#FFA500" },
   { id: "festival-brunch", name: "Festival Brunch", color: "#FF8C00" },
   { id: "pool-party", name: "Pool Party", color: "#FFD700" },
-  { id: "post-game", name: "Post-game", color: "#FF6347" },
+  { id: "afterglow", name: "Afterglow", color: "#FF6347" },
   { id: "club", name: "Club", color: "#2D2D2D" },
   { id: "late-night-warehouse", name: "Late Night Warehouse", color: "#1A1A1A" }
 ];
@@ -220,10 +220,10 @@ Example sources: Free Music Archive, Incompetech, Bandcamp, YouTube Audio Librar
 For each track, ask three questions. **Each selected tag gets its own 1-10 confidence score.**
 
 1. **"When would I play this?"** → Time/Setting (pick 1–2, each with confidence 1-10)
-   - Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Post-game, Club, Late Night Warehouse
+   - Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Afterglow, Club, Late Night Warehouse
    - Most tracks fit one context (rate it 8-10). Some work across two—rate each independently.
    - Example: This uplifting house groove? Pool Party (9).
-   - Example: This transitional ambient track works for both Pool Party (8) and Post-game (5) wind-down.
+   - Example: This transitional ambient track works for both Pool Party (8) and Afterglow (5) wind-down.
 
 2. **"What does this track do in a set?"** → Journey Role (pick 1–2+, each with confidence 1-10)
    - Opener, Bridge, Reset, Home Stretch

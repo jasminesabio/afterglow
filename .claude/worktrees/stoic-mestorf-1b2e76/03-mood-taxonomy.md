@@ -58,19 +58,19 @@ Pool Party tracks are usually straightforward and bright. They work in a context
 **What it's NOT:** Not "chill"—Festival Brunch has groove and energy. Not as casual as Pool Party.
 
 **Why this tag is musically specific:**
-Festival Brunch sits between casual (Pool Party) and deep (Post-game). It respects the listener's engagement while remaining accessible and fun.
+Festival Brunch sits between casual (Pool Party) and deep (Afterglow). It respects the listener's engagement while remaining accessible and fun.
 
 ---
 
-### Post-game
+### Afterglow
 **When:** After a main event or peak moment; things are winding down but people aren't leaving  
 **Performance moment:** The main set is over, energy is descending, people linger  
 **Feel:** Reflective, social, maybe melancholic or euphoric. Presence without intensity  
 **Real scenario:** Main act just finished. 50 people lingering, chatting, dancing lazily. 2–4 hours before complete wind-down  
-**What it's NOT:** Not "sad" or "chill"—Post-game can be joyful. It's about the *timing* (after peak) and *intention* (lingering, not leaving).
+**What it's NOT:** Not "sad" or "chill"—Afterglow can be joyful. It's about the *timing* (after peak) and *intention* (lingering, not leaving).
 
 **Why this tag is musically specific:**
-Post-game is the "after the main thing" moment. A Post-game track has to honor the fact that the party isn't ending abruptly, but something has concluded. It's a different energy than Sunrise Reset (which is transcendent) or Home Stretch (which is actively closing).
+Afterglow is the "after the main thing" moment. A Afterglow track has to honor the fact that the party isn't ending abruptly, but something has concluded. It's a different energy than Sunrise Reset (which is transcendent) or Home Stretch (which is actively closing).
 
 ---
 
@@ -82,7 +82,7 @@ Post-game is the "after the main thing" moment. A Post-game track has to honor t
 **What it's NOT:** Not "chillout music"—Sunrise Reset can be energizing. It's about the *moment* (literal or metaphorical sunrise context).
 
 **Why this tag is musically specific:**
-Sunrise is a threshold moment. Tracks work here because they acknowledge the shift in time and energy. Not the same as Post-game (which is lingering) or Home Stretch (which is active closing).
+Sunrise is a threshold moment. Tracks work here because they acknowledge the shift in time and energy. Not the same as Afterglow (which is lingering) or Home Stretch (which is active closing).
 
 ---
 
@@ -240,18 +240,18 @@ A DJ browsing finds it multiple ways.
 A track that's tender, closing energy. Meant for people leaving but not sad.
 
 ```
-Time/Setting:  Post-game, Sunrise Reset
+Time/Setting:  Afterglow, Sunrise Reset
 Journey Role:  Home Stretch
 Crowd State:   Wanderers
 
 Why these tags:
-- Post-game + Sunrise Reset: Both are "winding down" moments.
+- Afterglow + Sunrise Reset: Both are "winding down" moments.
 - Home Stretch: Moves toward closure with beauty.
 - Wanderers: Crowd is moving, leaving, but still present.
 
 In the spatial view:
 This track sits in the "closure" zones across two contexts.
-In Post-game: Home Stretch + Wanderers zone
+In Afterglow: Home Stretch + Wanderers zone
 In Sunrise Reset: Home Stretch + Wanderers zone
 
 Functional purpose is identical; contexts are different.

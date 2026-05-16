@@ -54,11 +54,11 @@
 - Warm-up
 - Festival Brunch
 - Pool Party ← MVP focus
-- Post-game
+- Afterglow
 - Club
 - Late Night Warehouse
 
-Most tracks fit one time/setting. Some tracks genuinely work across two (e.g., a track that bridges Pool Party and Post-game energy). Tag both with confidence: "Pool Party (9) + Post-game (6)"—the track definitely works for Pool Party but could also work for Post-game wind-down.
+Most tracks fit one time/setting. Some tracks genuinely work across two (e.g., a track that bridges Pool Party and Afterglow energy). Tag both with confidence: "Pool Party (9) + Afterglow (6)"—the track definitely works for Pool Party but could also work for Afterglow wind-down.
 
 ### Journey Role (pick 1–2+, each with confidence)
 - Opener

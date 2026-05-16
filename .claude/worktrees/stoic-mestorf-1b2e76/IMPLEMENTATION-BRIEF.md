@@ -106,7 +106,7 @@ const phases = [
   { id: "warmup", name: "Warm-up", color: "#FFA500" },
   { id: "pool-party", name: "Pool Party", color: "#FFD700" },
   { id: "festival-brunch", name: "Festival Brunch", color: "#FF8C00" },
-  { id: "post-game", name: "Post-game", color: "#FF6347" },
+  { id: "afterglow", name: "Afterglow", color: "#FF6347" },
   { id: "sunrise-reset", name: "Sunrise Reset", color: "#87CEEB" }
 ];
 ```
@@ -202,7 +202,7 @@ Example sources: Free Music Archive, Incompetech, Bandcamp, YouTube Audio Librar
 For each track, ask three questions:
 
 1. **"When would I play this?"** → Time/Setting (choose 1–2, usually 1)
-   - Warm-up, Pool Party, Festival Brunch, Post-game, Sunrise Reset
+   - Warm-up, Pool Party, Festival Brunch, Afterglow, Sunrise Reset
    - Example: This uplifting house groove? Pool Party.
 
 2. **"What does this track do in a set?"** → Journey Role (choose 1)

@@ -104,7 +104,7 @@ These describe the time of day and event context in which a track might be usefu
 - **Warm-up** — Early arrival, introductory vibe, people still settling in
 - **Pool party** — Daytime, social, carefree, often more straightforward energy
 - **Festival brunch** — Daytime, groovy, fun, often slightly less intense than night
-- **Post-game** — After a main event, winding down but still social, reflective
+- **Afterglow** — After a main event, winding down but still social, reflective
 - **Sunrise reset** — Long night ending, transition toward new day, often introspective or ethereal
 
 ✓ **These are decided.** The language is specific to real scenarios and the emotional arc they carry.

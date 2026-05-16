@@ -53,7 +53,7 @@
 - Warm-up
 - Pool Party ← MVP focus
 - Festival Brunch
-- Post-game
+- Afterglow
 - Sunrise Reset
 
 ### Journey Role (pick 1)

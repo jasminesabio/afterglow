@@ -125,7 +125,7 @@ Practice until it feels natural. Don't memorize word-for-word; use these as guid
 
 > "You open Afterglow. The first thing you see is a timeline of the day—different contexts where you might play.
 >
-> Warm-up, Pool Party, Festival Brunch, Post-game, Sunrise Reset.
+> Warm-up, Pool Party, Festival Brunch, Afterglow, Sunrise Reset.
 >
 > For your gig, you say: 'I'm playing 4 pm. Pool Party.' You click on it."
 

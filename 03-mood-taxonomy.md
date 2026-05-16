@@ -24,7 +24,7 @@ Each answer is a tag. Together, they create a multidimensional map of your libra
 
 These tags describe real-world DJ scenarios where you'd use a track.
 
-✓ **Pick 1–2, each with confidence (1-10).** Most tracks fit one context (rate 8-10). Some tracks genuinely work across two scenarios—tag both if honest, rating each independently. For example, a track might work for both Pool Party (9) and Post-game (5), or both Club (8) and Late Night Warehouse (8).
+✓ **Pick 1–2, each with confidence (1-10).** Most tracks fit one context (rate 8-10). Some tracks genuinely work across two scenarios—tag both if honest, rating each independently. For example, a track might work for both Pool Party (9) and Afterglow (5), or both Club (8) and Late Night Warehouse (8).
 
 ### Warm-up
 **When:** Early in an event, before the main energy builds  
@@ -58,19 +58,19 @@ Pool Party tracks are usually straightforward and bright. They work in a context
 **What it's NOT:** Not "chill"—Festival Brunch has groove and energy. Not as casual as Pool Party.
 
 **Why this tag is musically specific:**
-Festival Brunch sits between casual (Pool Party) and deep (Post-game). It respects the listener's engagement while remaining accessible and fun.
+Festival Brunch sits between casual (Pool Party) and deep (Afterglow). It respects the listener's engagement while remaining accessible and fun.
 
 ---
 
-### Post-game
+### Afterglow
 **When:** After a main event or peak moment; things are winding down but people aren't leaving  
 **Performance moment:** The main set is over, energy is descending, people linger  
 **Feel:** Reflective, social, maybe melancholic or euphoric. Presence without intensity  
 **Real scenario:** Main act just finished. 50 people lingering, chatting, dancing lazily. 2–4 hours before complete wind-down  
-**What it's NOT:** Not "sad" or "chill"—Post-game can be joyful. It's about the *timing* (after peak) and *intention* (lingering, not leaving).
+**What it's NOT:** Not "sad" or "chill"—Afterglow can be joyful. It's about the *timing* (after peak) and *intention* (lingering, not leaving).
 
 **Why this tag is musically specific:**
-Post-game is the "after the main thing" moment. A Post-game track has to honor the fact that the party isn't ending abruptly, but something has concluded. It's a different energy than Sunrise Reset (which is transcendent) or Home Stretch (which is actively closing).
+Afterglow is the "after the main thing" moment. A Afterglow track has to honor the fact that the party isn't ending abruptly, but something has concluded. It's a different energy than Sunrise Reset (which is transcendent) or Home Stretch (which is actively closing).
 
 ---
 
@@ -82,7 +82,7 @@ Post-game is the "after the main thing" moment. A Post-game track has to honor t
 **What it's NOT:** Not "chillout music"—Sunrise Reset can be energizing. It's about the *moment* (literal or metaphorical sunrise context).
 
 **Why this tag is musically specific:**
-Sunrise is a threshold moment. Tracks work here because they acknowledge the shift in time and energy. Not the same as Post-game (which is lingering) or Home Stretch (which is active closing).
+Sunrise is a threshold moment. Tracks work here because they acknowledge the shift in time and energy. Not the same as Afterglow (which is lingering) or Home Stretch (which is active closing).
 
 ---
 
@@ -94,7 +94,7 @@ Sunrise is a threshold moment. Tracks work here because they acknowledge the shi
 **What it's NOT:** Not "hard" or "aggressive"—Club energy is *controlled power*. Not the same as Late Night Warehouse (which is more experimental/hypnotic).
 
 **Why this tag is musically specific:**
-Club tracks need to work in a dark, bouncy context where the dancefloor is the primary focus. They're usually 4/4, driving, with clear rhythmic intent. Different from Post-game (which is lingering) or Late Night Warehouse (which has more space/ambition).
+Club tracks need to work in a dark, bouncy context where the dancefloor is the primary focus. They're usually 4/4, driving, with clear rhythmic intent. Different from Afterglow (which is lingering) or Late Night Warehouse (which has more space/ambition).
 
 ---
 
@@ -264,18 +264,18 @@ A DJ browsing finds it multiple ways.
 A track that's tender, closing energy. Meant for people leaving but not sad.
 
 ```
-Time/Setting:  Post-game, Sunrise Reset
+Time/Setting:  Afterglow, Sunrise Reset
 Journey Role:  Home Stretch
 Crowd State:   Wanderers
 
 Why these tags:
-- Post-game + Sunrise Reset: Both are "winding down" moments.
+- Afterglow + Sunrise Reset: Both are "winding down" moments.
 - Home Stretch: Moves toward closure with beauty.
 - Wanderers: Crowd is moving, leaving, but still present.
 
 In the spatial view:
 This track sits in the "closure" zones across two contexts.
-In Post-game: Home Stretch + Wanderers zone
+In Afterglow: Home Stretch + Wanderers zone
 In Sunrise Reset: Home Stretch + Wanderers zone
 
 Functional purpose is identical; contexts are different.
@@ -294,7 +294,7 @@ When assigning tags to a new track: **Each selected tag gets its own 1-10 confid
    - Most tracks fit one context (rate 8-10). Tag that one confidently.
    - If it genuinely works across two scenarios, tag both and rate each independently.
    - Example: "Pool Party (9)" ← confident
-   - Example: "Pool Party (9) + Post-game (5)" ← works in both, but Pool Party is primary
+   - Example: "Pool Party (9) + Afterglow (5)" ← works in both, but Pool Party is primary
    - Don't force multi-tags. Be honest about where the track actually fits.
 
 2. **"What does this track *do* in a set?"** → Journey Role tag(s) — pick 1–2+, each with confidence (1-10)

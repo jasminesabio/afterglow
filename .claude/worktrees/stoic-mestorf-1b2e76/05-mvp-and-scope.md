@@ -18,7 +18,7 @@ A visual representation of the day's five phases. DJ clicks one phase to enter t
 **Judge alignment:** All judges need this to understand the three-layer model.
 
 **Success criteria:**
-- Phases are clear (Warm-up, Pool Party, Festival Brunch, Post-game, Sunrise Reset)
+- Phases are clear (Warm-up, Pool Party, Festival Brunch, Afterglow, Sunrise Reset)
 - Clicking transitions smoothly to constellation view
 - No confusion about what a phase means
 

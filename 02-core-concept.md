@@ -9,7 +9,7 @@
 **What it shows:** Seven time-of-day/context phases representing different event moments
 
 ```
-Sunrise Reset  |  Warm-up  |  Festival Brunch  |  Pool Party  |  Post-game  |  Club  |  Late Night Warehouse
+Sunrise Reset  |  Warm-up  |  Festival Brunch  |  Pool Party  |  Afterglow  |  Club  |  Late Night Warehouse
 ```
 
 **Why these phases?**
@@ -18,7 +18,7 @@ These represent the real DJ scenarios people face:
 - **Warm-up:** Early evening, setting the vibe (6–9 pm)
 - **Festival Brunch:** Daytime, social, lighter energy (10 am–2 pm)
 - **Pool Party:** Afternoon, peak fun, uplifting (4–7 pm)
-- **Post-game:** Late night, energy variable, flex (11 pm–2 am)
+- **Afterglow:** Late night, energy variable, flex (11 pm–2 am)
 - **Club:** Peak dancefloor energy, dark, high energy (11 pm–4 am)
 - **Late Night Warehouse:** Deep, hypnotic, sustained energy (2 am–sunrise)
 
@@ -213,7 +213,7 @@ Pool Party Constellation (40–50 tracks)
 ## What Happens Next
 
 Once judges see this three-layer model working for Pool Party:
-- **Obvious roadmap:** Same approach for Warm-up, Festival Brunch, Post-game, Sunrise Reset
+- **Obvious roadmap:** Same approach for Warm-up, Festival Brunch, Afterglow, Sunrise Reset
 - **Natural expansion:** User customization (own categories, own contexts)
 - **Integration ready:** Design prepared for djay SDK or other tools (future)
 

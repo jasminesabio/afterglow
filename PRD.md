@@ -45,7 +45,7 @@ An emerging DJ who feels blocked by their organization system stops DJing. A con
 ### What Afterglow Is
 A three-layer library browsing system:
 
-1. **Timeline of the Day** — Choose your scenario (Pool Party, Sunrise Reset, Post-game, etc.)
+1. **Timeline of the Day** — Choose your scenario (Pool Party, Sunrise Reset, Afterglow, etc.)
 2. **Spatial Mood Constellation** — Spatial arrangement of your library by performance contexts (who's here? what role does this track play?)
 3. **Track Details** — Click to see artist, duration, tags, play count, and why it belongs in this zone
 
@@ -129,7 +129,7 @@ Anyone preparing for **uncertain performance scenarios** (unknown timing, unknow
 ## 6. Functional Requirements
 
 ### Timeline View
-- **Display:** Seven time/setting phases (Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Post-game, Club, Late Night Warehouse)
+- **Display:** Seven time/setting phases (Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Afterglow, Club, Late Night Warehouse)
 - **Interaction:** Click phase → loads constellation view
 - **Behavior:** Visual feedback on selected phase
 
@@ -346,7 +346,7 @@ These are resolved or will be during planning/build:
 | **Time/Setting** | When/where you'd play a track (Pool Party, Sunrise Reset, etc.). Pick 1–2, each with confidence (1-10). |
 | **Journey Role** | What a track does in a set (Opener, Bridge, Reset, Home Stretch). Pick 1–2+, each with confidence (1-10). |
 | **Crowd State** | Who's here and what's their attention (Arrivals, Lock-in, Wanderers). Pick 1–2, each with confidence (1-10). |
-| **Confidence** | 1-10 rating for each tag indicating certainty. 1=barely fits, 10=definitely. Allows "Pool Party (9) + Post-game (4)". |
+| **Confidence** | 1-10 rating for each tag indicating certainty. 1=barely fits, 10=definitely. Allows "Pool Party (9) + Afterglow (4)". |
 | **Rediscovery** | Finding underplayed material in context |
 | **Underplayed** | Track with play count < 5 |
 | **MVP** | Minimum viable product for hackathon (Pool Party + demo) |

@@ -18,21 +18,21 @@
 
 | Artist | Title | Duration | Play Count | Time | Role | Crowd | Notes |
 |--------|-------|----------|------------|------|------|-------|-------|
-| Rampa | 2000 (Original Mix) | 6:16 | 0 | Post Game (8) + Late Night Warehouse (7) | Bridge (8), Reset (8) | Arrivals (6), Lock In (8) | Indie Dance |
-| Rhye, Adam Ten | 3 Days Later (Extended) | 6:47 | 0 | Sunrise Reset (7) + Warm Up (8) + Festival Brunch (8) + Pool Party (8) + Post Game (7) | Opener (8), Reset (7), Home Stretch (8) | Arrivals (8), Wanderers (8) | Melodic House & Techno |
+| Rampa | 2000 (Original Mix) | 6:16 | 0 | Afterglow (8) + Late Night Warehouse (7) | Bridge (8), Reset (8) | Arrivals (6), Lock In (8) | Indie Dance |
+| Rhye, Adam Ten | 3 Days Later (Extended) | 6:47 | 0 | Sunrise Reset (7) + Warm Up (8) + Festival Brunch (8) + Pool Party (8) + Afterglow (7) | Opener (8), Reset (7), Home Stretch (8) | Arrivals (8), Wanderers (8) | Melodic House & Techno |
 | Lucas Dekker | A Fire Inside Of Me | 4:44 | 0 | Festival Brunch (6) + Pool Party (8) | Bridge (8) | Arrivals (8), Wanderers (8) | House |
-| Coldplay | A Sky Full of Stars (Kölsch Remix) | 9:21 | 0 | Sunrise Reset (7) + Post Game (7) | Home Stretch (7) | Wanderers (8) | Electronica |
+| Coldplay | A Sky Full of Stars (Kölsch Remix) | 9:21 | 0 | Sunrise Reset (7) + Afterglow (7) | Home Stretch (7) | Wanderers (8) | Electronica |
 | Tchami | Adieu (Original Mix) | 6:53 | 0 | Sunrise Reset (8) + Club (6) | Bridge (8), Home Stretch (7) | Arrivals (6), Lock In (8) | Mainstage |
-| L'Imperatrice | Agitations tropicales | 4:08 | 0 | Warm Up (7) + Pool Party (9) + Post Game (7) | Opener (8), Reset (6) | Arrivals (6), Wanderers (8) | Dance / Pop |
+| L'Imperatrice | Agitations tropicales | 4:08 | 0 | Warm Up (7) + Pool Party (9) + Afterglow (7) | Opener (8), Reset (6) | Arrivals (6), Wanderers (8) | Dance / Pop |
 | Mita Gami | All By Myself (Original Mix) | 5:09 | 0 | Club (8) | Opener (6), Bridge (8) | Arrivals (6), Lock In (8) | Deep House |
-| LP Giobbi | All I Need (DESIREE Remix) | 5:39 | 0 | Sunrise Reset (8) + Warm Up (7) + Post Game (6) | Opener (8), Reset (8) | Arrivals (8), Wanderers (8) | Afro House |
-| DJ Tennis, Joseph Ashworth, LP Giobbi | All In A Dream feat. DJ Tennis feat. Joseph Ashworth (Extended Mix) | 6:08 | 0 | Sunrise Reset (8) + Warm Up (7) + Post Game (8) | Opener (8), Reset (8) | Arrivals (8), Wanderers (8) | Melodic House & Techno |
+| LP Giobbi | All I Need (DESIREE Remix) | 5:39 | 0 | Sunrise Reset (8) + Warm Up (7) + Afterglow (6) | Opener (8), Reset (8) | Arrivals (8), Wanderers (8) | Afro House |
+| DJ Tennis, Joseph Ashworth, LP Giobbi | All In A Dream feat. DJ Tennis feat. Joseph Ashworth (Extended Mix) | 6:08 | 0 | Sunrise Reset (8) + Warm Up (7) + Afterglow (8) | Opener (8), Reset (8) | Arrivals (8), Wanderers (8) | Melodic House & Techno |
 | Le Youth | Aquiver | 6:45 | 0 | Sunrise Reset (8) + Warm Up (6) | Bridge (8) | Arrivals (8), Lock In (6) | Melodic House & Techno |
 | Noir, Haze | Around (Solomun Vox) | 6:58 | 0 | Festival Brunch (6) + Club (8) | Opener (7) | Arrivals (8), Lock In (8) | Deep House |
 | Tiga, Hudson Mohawke, Elisabeth Troy | Ascending Into The Clouds (Original Mix) | 6:14 | 0 | Club (8) + Late Night Warehouse (7) | Bridge (6), Home Stretch (7) | Lock In (7) | Dance / Pop |
-| Andre Nickatina | Ayo for Yayo (feat. San Quinn) | 3:14 | 0 | Post Game (9) | Bridge (8) | Lock In (8), Wanderers (7) | Hip-Hop/Rap |
+| Andre Nickatina | Ayo for Yayo (feat. San Quinn) | 3:14 | 0 | Afterglow (9) | Bridge (8) | Lock In (8), Wanderers (7) | Hip-Hop/Rap |
 | Interplanetary Criminal, Eliza Rose | B.O.T.A. (Baddest Of Them All) (Original Mix) | 5:58 | 0 | Sunrise Reset (7) + Festival Brunch (7) + Pool Party (8) + Club (8) | Bridge (8) | Arrivals (7), Lock In (7), Wanderers (7) | House |
-| Adriatique, JAiMES, Samm (BE) | Back to Life (Extended Mix) | 6:29 | 0 | Post Game (7) + Late Night Warehouse (8) | Opener (8), Bridge (7) | Arrivals (7), Wanderers (7) | Dance / Pop |
+| Adriatique, JAiMES, Samm (BE) | Back to Life (Extended Mix) | 6:29 | 0 | Afterglow (7) + Late Night Warehouse (8) | Opener (8), Bridge (7) | Arrivals (7), Wanderers (7) | Dance / Pop |
 
 ---
 
@@ -52,7 +52,7 @@
       "tags": {
         "time": [
           {
-            "value": "post-game",
+            "value": "afterglow",
             "confidence": 8
           },
           {
@@ -113,7 +113,7 @@
             "confidence": 8
           },
           {
-            "value": "post-game",
+            "value": "afterglow",
             "confidence": 7
           }
         ],
@@ -203,7 +203,7 @@
             "confidence": 7
           },
           {
-            "value": "post-game",
+            "value": "afterglow",
             "confidence": 7
           }
         ],
@@ -289,7 +289,7 @@
             "confidence": 9
           },
           {
-            "value": "post-game",
+            "value": "afterglow",
             "confidence": 7
           }
         ],
@@ -379,7 +379,7 @@
             "confidence": 7
           },
           {
-            "value": "post-game",
+            "value": "afterglow",
             "confidence": 6
           }
         ],
@@ -428,7 +428,7 @@
             "confidence": 7
           },
           {
-            "value": "post-game",
+            "value": "afterglow",
             "confidence": 8
           }
         ],
@@ -592,7 +592,7 @@
       "tags": {
         "time": [
           {
-            "value": "post-game",
+            "value": "afterglow",
             "confidence": 9
           }
         ],
@@ -682,7 +682,7 @@
       "tags": {
         "time": [
           {
-            "value": "post-game",
+            "value": "afterglow",
             "confidence": 7
           },
           {

@@ -18,7 +18,7 @@ A visual representation of the day's seven time/setting phases. DJ clicks one ph
 **Judge alignment:** All judges need this to understand the three-layer model.
 
 **Success criteria:**
-- Phases are clear (Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Post-game, Club, Late Night Warehouse)
+- Phases are clear (Sunrise Reset, Warm-up, Festival Brunch, Pool Party, Afterglow, Club, Late Night Warehouse)
 - Clicking transitions smoothly to constellation view
 - No confusion about what a phase means
 
