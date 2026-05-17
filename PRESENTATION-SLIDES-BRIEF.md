@@ -45,7 +45,51 @@ Club warm-up (9/10) + Festival peak (7/10) + Wedding (6/10)
 
 ---
 
-## SLIDE 4: How It Works—Part 1
+## SLIDE 4: The Magic Moment
+You click a Club Warm-up track.  
+It's near Festival Peak tracks.
+
+You check the ratings: "7/10 for Festival Peak, 6/10 for Lock-in crowd."
+
+**Realization:** "I could use this in my Peak set. I'm confident about it."
+
+→ Preparation meeting serendipity.  
+→ The moment you trust your taste.
+
+**Timing:** 1 min  
+**Notes:** Make them feel it. Pause before the realization. This is the emotional peak.
+
+---
+
+## SLIDE 5: Why This Matters
+✓ Understand your own taste (not someone else's)  
+✓ Ready for the unexpected (you've already thought it through)  
+✓ Intentionality (judges hear confidence)  
+✓ Collaborate with precision (shared language about moments)
+
+→ This separates emerging DJs from lasting DJs.
+
+**Timing:** 45 sec  
+**Notes:** Don't read the list. Hit 2-3 that resonate with judges.
+
+---
+
+## SLIDE 6: Algoriddim Challenge Fit
+**Challenge:** Improve DJ workflow with djay data.
+
+**Afterglow Solves:**
+- Novel way to organize libraries (by context, not genre)
+- New performance interface (tagging + constellation)
+- Transparent workflow (confidence scoring visible)
+- Connected experience (reveals cross-context tracks)
+- djay integration coming (Phase 2)
+
+**Timing:** 45 sec  
+**Notes:** Brief. Show you're solving the challenge, not just building cool tech.
+
+---
+
+## SLIDE 7: How It Works—Part 1
 ### 🎬 LIVE DEMO: Tagging UX
 
 **Three Dimensions (1-10 confidence):**
@@ -59,12 +103,12 @@ Club Lock-in: 9/10 | Peak Role: 8/10 | Lock-in Crowd: 7/10
 **Same Track, Festival:**  
 Sunset: 6/10 | Bridge: 5/10 | Arrivals: 4/10
 
-**Timing:** 2 min  
+**Timing:** 1.5 min  
 **Notes:** Walk through the UI. Show a real track being tagged. Emphasize honesty, not perfection. This is where craft begins.
 
 ---
 
-## SLIDE 5: How It Works—Part 2
+## SLIDE 8: How It Works—Part 2
 ### 🎬 LIVE DEMO: Constellation Visualization
 
 **Visual Layout:**
@@ -78,51 +122,7 @@ Sunset: 6/10 | Bridge: 5/10 | Arrivals: 4/10
 - Gaps (what you need)
 
 **Timing:** 1.5 min  
-**Notes:** Show the visualization. Paint the picture. This is the emotional peak—DJs realize their taste is coherent, not random.
-
----
-
-## SLIDE 6: The Magic Moment
-You click a Club Warm-up track.  
-It's near Festival Peak tracks.
-
-You check the ratings: "7/10 for Festival Peak, 6/10 for Lock-in crowd."
-
-**Realization:** "I could use this in my Peak set. I'm confident about it."
-
-→ Preparation meeting serendipity.  
-→ The moment you trust your taste.
-
-**Timing:** 1 min  
-**Notes:** Make them feel it. Pause before the realization.
-
----
-
-## SLIDE 7: Why This Matters
-✓ Understand your own taste (not someone else's)  
-✓ Ready for the unexpected (you've already thought it through)  
-✓ Intentionality (judges hear confidence)  
-✓ Collaborate with precision (shared language about moments)
-
-→ This separates emerging DJs from lasting DJs.
-
-**Timing:** 45 sec  
-**Notes:** Don't read the list. Hit 2-3 that resonate with judges.
-
----
-
-## SLIDE 8: Algoriddim Challenge Fit
-**Challenge:** Improve DJ workflow with djay data.
-
-**Afterglow Solves:**
-- Novel way to organize libraries (by context, not genre)
-- New performance interface (tagging + constellation)
-- Transparent workflow (confidence scoring visible)
-- Connected experience (reveals cross-context tracks)
-- djay integration coming (Phase 2)
-
-**Timing:** 45 sec  
-**Notes:** Brief. Show you're solving the challenge, not just building cool tech.
+**Notes:** Show the visualization. Paint the picture. This is how the magic happens—DJs realize their taste is coherent, not random.
 
 ---
 
@@ -145,10 +145,21 @@ Questions? Feedback? What would you need?
 
 ---
 
+## Flow Summary
+
+**Narrative Arc:**
+1. Hook (Problem + Insight) — 2:25
+2. Emotional Peak (Magic Moment) — 1:00
+3. Why It Matters + Challenge Fit — 1:30
+4. THEN: Live Demos (Tagging + Constellation) — 3:00
+5. Close (Team + Conversation) — 0:20
+
+**Advantage:** Judges are invested in the narrative before seeing the tool. Demos feel like the payoff, not an interruption.
+
 ## TOTAL TIME
-**Content:** ~6 minutes  
+**Content:** ~6-6.5 minutes  
 **Q&A:** +1-2 minutes  
-**Total:** 7-8 minutes ✓
+**Total:** 7-8.5 minutes ✓
 
 ---
 
