@@ -86,6 +86,125 @@
             font-weight: 600;
         }
 
+        /* Settings Definition Section */
+        .settings-section {
+            display: none;
+        }
+
+        .settings-section.active {
+            display: block;
+        }
+
+        .settings-intro {
+            background: #fff;
+            border: 1px solid #d8d3cc;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .settings-intro-text {
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .settings-input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .settings-input-group input {
+            flex: 1;
+            padding: 8px 10px;
+            border: 1px solid #d8d3cc;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .settings-input-group input:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            background: #fafaf8;
+        }
+
+        .settings-input-group button {
+            padding: 8px 14px;
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .settings-input-group button:hover {
+            background: #333;
+        }
+
+        .settings-list {
+            background: #fff;
+            border: 1px solid #d8d3cc;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+
+        .settings-list-title {
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .settings-list-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .setting-tag {
+            background: #f8f7f5;
+            border: 1px solid #d8d3cc;
+            border-radius: 3px;
+            padding: 6px 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85em;
+        }
+
+        .setting-tag-remove {
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .setting-tag-remove:hover {
+            color: #1a1a1a;
+        }
+
+        .empty-settings {
+            color: #888;
+            font-size: 0.8em;
+            padding: 10px;
+            text-align: center;
+        }
+
         /* Tagging Section */
         .tagging-section {
             display: none;
@@ -413,6 +532,30 @@
         </div>
         <input type="file" id="csvInput" accept=".csv" />
 
+        <!-- Settings Definition -->
+        <div class="settings-section" id="settingsSection">
+            <div class="settings-intro">
+                <div class="settings-intro-text">
+                    <strong>Define your settings.</strong> What kind of contexts or moments are you organizing your music for? (Examples: Wedding, Festival, Club, Lounge, Workout, etc.)
+                </div>
+            </div>
+
+            <div class="settings-input-group">
+                <input type="text" id="settingInput" placeholder="e.g., Traditional Wedding, Rave Wedding, Country Wedding..." />
+                <button id="addSettingBtn">Add Setting</button>
+            </div>
+
+            <div class="settings-list">
+                <div class="settings-list-title">Your Settings</div>
+                <div class="settings-list-items" id="settingsList"></div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn-secondary" id="backBtn">← Back</button>
+                <button class="btn-primary" id="startTaggingBtn" disabled>Start Tagging →</button>
+            </div>
+        </div>
+
         <!-- Tagging -->
         <div class="tagging-section" id="taggingSection">
             <div class="progress-container">
@@ -490,18 +633,25 @@
         let tracks = [];
         let currentIndex = 0;
         let tagging = {}; // tagging[i] = { setting: [], journey: [], crowd: [] }
+        let customSettings = [];
 
         const TAG_OPTIONS = {
-            setting: ['Afterglow', 'Sunrise Reset', 'Warm-up', 'Festival Brunch', 'Pool Party', 'Club', 'Late Night Warehouse'],
+            setting: [],
             journey: ['Opener', 'Bridge', 'Reset', 'Home Stretch'],
             crowd: ['Arrivals', 'Lock-in', 'Wanderers']
         };
 
         // DOM
         const uploadSection = document.getElementById('uploadSection');
+        const settingsSection = document.getElementById('settingsSection');
         const taggingSection = document.getElementById('taggingSection');
         const completionScreen = document.getElementById('completionScreen');
         const csvInput = document.getElementById('csvInput');
+        const settingInput = document.getElementById('settingInput');
+        const addSettingBtn = document.getElementById('addSettingBtn');
+        const settingsList = document.getElementById('settingsList');
+        const backBtn = document.getElementById('backBtn');
+        const startTaggingBtn = document.getElementById('startTaggingBtn');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const downloadJsonBtn = document.getElementById('downloadJsonBtn');
@@ -526,6 +676,77 @@
         // Center the upload section initially
         document.querySelector('.container').classList.add('uploading');
 
+        // Render settings list
+        function renderSettings() {
+            if (customSettings.length === 0) {
+                settingsList.innerHTML = '<div class="empty-settings">No settings yet. Add one to get started.</div>';
+                startTaggingBtn.disabled = true;
+            } else {
+                settingsList.innerHTML = customSettings.map((setting, idx) => `
+                    <div class="setting-tag">
+                        <span>${setting}</span>
+                        <button class="setting-tag-remove" data-index="${idx}">✕</button>
+                    </div>
+                `).join('');
+                startTaggingBtn.disabled = false;
+
+                // Add remove listeners
+                settingsList.querySelectorAll('.setting-tag-remove').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const idx = parseInt(e.target.dataset.index);
+                        customSettings.splice(idx, 1);
+                        renderSettings();
+                    });
+                });
+            }
+        }
+
+        // Add setting
+        function addSetting() {
+            const value = settingInput.value.trim();
+            if (!value) {
+                alert('Please enter a setting name');
+                return;
+            }
+            if (customSettings.includes(value)) {
+                alert('This setting already exists');
+                return;
+            }
+            customSettings.push(value);
+            settingInput.value = '';
+            renderSettings();
+            settingInput.focus();
+        }
+
+        // Event listeners for settings
+        addSettingBtn.addEventListener('click', addSetting);
+        settingInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addSetting();
+        });
+
+        backBtn.addEventListener('click', () => {
+            customSettings = [];
+            settingsSection.classList.remove('active');
+            uploadSection.style.display = 'block';
+            document.querySelector('.container').classList.add('uploading');
+        });
+
+        startTaggingBtn.addEventListener('click', () => {
+            // Update TAG_OPTIONS with custom settings
+            TAG_OPTIONS.setting = customSettings;
+
+            // Initialize tagging
+            tagging = {};
+            tracks.forEach((_, i) => {
+                tagging[i] = { setting: [], journey: [], crowd: [] };
+            });
+
+            currentIndex = 0;
+            settingsSection.classList.remove('active');
+            taggingSection.classList.add('active');
+            renderTrack();
+        });
+
         // Upload handler
         uploadSection.addEventListener('click', () => {
             csvInput.click();
@@ -544,17 +765,12 @@
                     return;
                 }
 
-                // Initialize tagging
-                tagging = {};
-                tracks.forEach((_, i) => {
-                    tagging[i] = { setting: [], journey: [], crowd: [] };
-                });
-
-                currentIndex = 0;
+                // Show settings section
+                customSettings = [];
                 uploadSection.style.display = 'none';
-                taggingSection.classList.add('active');
+                settingsSection.classList.add('active');
                 document.querySelector('.container').classList.remove('uploading');
-                renderTrack();
+                renderSettings();
             };
             reader.readAsText(file);
         });
@@ -738,8 +954,10 @@
             tracks = [];
             currentIndex = 0;
             tagging = {};
+            customSettings = [];
             csvInput.value = '';
             uploadSection.style.display = 'block';
+            settingsSection.classList.remove('active');
             taggingSection.classList.remove('active');
             completionScreen.classList.remove('active');
             document.querySelector('.container').classList.add('uploading');
