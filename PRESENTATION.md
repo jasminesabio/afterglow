@@ -3,6 +3,26 @@
 
 ---
 
+## Why This Fits the Algoriddim djay Challenge
+
+**Challenge Focus:** "Improve the DJ workflow" — use djay data to create more transparent, connected, and visually expressive DJ experiences.
+
+**How Afterglow Addresses This:**
+
+✓ **Novel way to explore and organize music libraries** — Instead of genre playlists, DJs organize tracks by context, confidence, and moment across multiple dimensions.
+
+✓ **New performance tool/interface** — The tagging dashboard and constellation visualization are new interfaces that make DJ thinking transparent and actionable.
+
+✓ **Set-preparation workflow** — Confidence scoring (1-10 ratings) makes set prep systematic and intentional, not intuitive guessing.
+
+✓ **Transparent, connected experience** — The constellation reveals hidden connections between tracks across contexts—DJs see *why* a wedding track works in a festival set.
+
+✓ **djay Integration (Phase 2)** — Tagging happens inside djay Pro, making organization part of the native workflow, not an external tool.
+
+**The Insight:** DJs already think about moments and confidence. Afterglow makes that thinking visible, organized, and shareable—solving the real problem in DJ workflow: translating instinct into intention.
+
+---
+
 ## SLIDE 1: Title Slide
 
 **Content:** Afterglow: Organize Your Library the Way You Actually DJ
